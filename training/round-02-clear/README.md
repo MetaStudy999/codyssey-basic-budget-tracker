@@ -14,6 +14,15 @@
 
 현재 번호·제목·공식 요구사항은 **제2기 현재 Mission PDF**를 최우선으로 사용한다. Repository의 과거 번호 파일은 동일 주제의 1기 참고자료로 사용한다.
 
+## 초압축 시간 예산
+
+- 구분: **필수**
+- 제2기 PDF 공식 학습시간: **60시간**
+- Round 02 내부 초압축 목표: **9시간**
+- 전체 계획: [2주 초압축 수행 계획](https://github.com/MetaStudy999/codyssey-basic/blob/main/training/round-02-clear/ACCELERATED-2WEEK-PLAN.md)
+
+초압축 목표는 공식 학습시간이나 요구사항을 줄이는 기준이 아니다. `round-01-clear` 재사용, 중복 제거, 최소 통과 경로 집중으로 시간을 줄인다. 실제 Runtime, Verification, Evidence, Secret 점검, 평가 설명은 생략하지 않는다.
+
 ## 기준 우선순위
 
 ```text
