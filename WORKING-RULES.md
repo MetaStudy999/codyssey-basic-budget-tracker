@@ -1,84 +1,60 @@
 # B2-1 작업 룰(Working Rules)
 
-이 문서는 B2-1에서 사용하는 **미션별 작업 운영 어댑터(Mission Working Rules Adapter)**입니다. 공통 규칙 전문을 복제하지 않고 메인 레포(Control Tower)의 상위 표준을 사용합니다.
+> 현재 제2기 Mission: **B2-1 — 나만의 용돈 기입장 프로그램 만들기**  
+> 과거 Repository Mission ID: `B2-1`  
+> **기준 레포(Canonical Control Repository):** [MetaStudy999/codyssey-basic](https://github.com/MetaStudy999/codyssey-basic)
 
-## 빠른 적용(Quick Apply)
+이 파일은 현재 미션의 **얇은 작업 운영 어댑터(Thin Working Rules Adapter)** 이다. 공통 규칙 전문은 기준 레포에서 관리하고 이 Repository에는 미션별 연결과 현재 Round만 둔다.
 
-```text
-B2-1 공식 Mission / Evaluation / 제공 파일
-→ 현재 B2-1 Repository main
-→ Control Tower 상위 작업 운영 표준
-→ BEGINNER-GUIDE / CHECKLIST
-→ 실제 실행(Runtime Execution)
-→ 검증(Verification)
-→ 증빙 자료(Evidence)
-→ 평가(Evaluation)
-→ 조건 충족 시에만 B2-1 CLEAR
-```
-
-## 📑 목차
-
-- [기준 우선순위](#priority)
-- [공통 작업 운영 표준](#standard)
-- [B2-1 실행 문서](#local)
-- [상태와 실행 규칙](#runtime)
-- [변경 관리](#change)
-
-<a id="priority"></a>
 ## 기준 우선순위
 
 ```text
-1. B2-1 공식 Mission / Evaluation / 제공 파일
-2. 이 Repository의 실제 main
-3. Control Tower 실제 main
-4. Control Tower standards/
-5. B2-1 학습·실행 문서
+제2기 현재 Mission PDF
+→ 제2기 오리엔테이션 PDF
+→ 이 Repository의 기존 Mission
+→ 기존 Evaluation
+→ training/round-01-clear 참고자료
+→ 일반 지식·외부 자료
 ```
 
-공식 요구사항과 내부 표준이 충돌하면 공식 요구사항이 우선합니다.
+현재 번호·제목·공식 요구사항은 제2기 현재 Mission PDF를 따른다. 과거 번호 파일은 동일 주제의 1기 참고자료로 보존한다.
 
-<a id="standard"></a>
-## 공통 작업 운영 표준
+## 현재 Round
 
-- [Codyssey Working Operating Standard](https://github.com/MetaStudy999/codyssey-basic/blob/main/standards/CODYSSEY-WORKING-OPERATING-STANDARD.md)
+- 기존 참고: `training/round-01-clear/`
+- 제2기 신규 수행: `training/round-02-clear/`
+- 시작 문서: [training/round-02-clear/README.md](training/round-02-clear/README.md)
+- 진행 체크: [training/round-02-clear/CHECKLIST.md](training/round-02-clear/CHECKLIST.md)
+- 공통 표준: [ROUND-02-MISSION-EXECUTION-STANDARD.md](https://github.com/MetaStudy999/codyssey-basic/blob/main/standards/ROUND-02-MISSION-EXECUTION-STANDARD.md)
 
-세부 용어·모듈화·환경·명령 설명·검증·증빙 규칙도 위 메인 레포 `standards/`를 사용합니다.
-
-<a id="local"></a>
-## B2-1 실행 문서
-
-- [`README.md`](README.md) — 미션 진입
-- [`training/round-01-clear/BEGINNER-GUIDE.md`](training/round-01-clear/BEGINNER-GUIDE.md) — 전체 중앙 허브(Global Hub)
-- [`training/round-01-clear/CHECKLIST.md`](training/round-01-clear/CHECKLIST.md) — 실제 완료 판정
-- [`training/round-01-clear/environment/`](training/round-01-clear/environment/) — 실행 환경·검증
-- [`training/round-01-clear/evidence/`](training/round-01-clear/evidence/) — 실제 증빙 자료(Evidence)
-
-<a id="runtime"></a>
-## 상태와 실행 규칙
+## 빠른 적용
 
 ```text
-Documentation Ready
-≠ BEGINNER READY
-≠ Runtime PASS
-≠ Verification PASS
-≠ Evidence Complete
-≠ Mission CLEAR
+공식 기준 확정
+→ 평가항목 먼저
+→ 최소 통과 경로
+→ 필요한 개념만 학습
+→ round-02-clear에서 한 단계씩 실제 실행
+→ Verification + Evidence
+→ 평가 설명
+→ 모의평가
+→ 조건 충족 시에만 B2-1 CLEAR
 ```
 
-실제 Runtime에서는 **Preflight → 한 단계 실행 → 실제 출력 → STOP/GO → 검증 → 다음 단계** 순서를 사용합니다. 실제 결과 없이 PASS/CLEAR를 기록하지 않습니다.
-
-비밀정보(Secret)는 값이 아니라 존재·경로·소유권·그룹·권한 등 메타데이터 중심으로 검증합니다.
-
-<a id="change"></a>
-## 변경 관리
+## 상태 원칙
 
 ```text
-최신 main 확인
-→ 대상 파일 현재 상태/SHA 확인
-→ 최소 변경
-→ Commit
-→ 실제 GitHub main 재확인
-→ APPLY & VERIFY
+문서 존재 ≠ Runtime PASS
+Runtime PASS ≠ Verification PASS
+Verification PASS ≠ Evidence Complete
+Evidence Complete ≠ Evaluation Ready
+위 조건 미충족 ≠ Mission CLEAR
 ```
 
-이 문서에는 B2-1 고유 예외만 추가하고, 공통 작업 룰 전문을 복제하지 않습니다.
+사용자의 실제 실행 결과 없이 PASS/CLEAR를 기록하지 않는다. Round 01의 과거 PASS/Evidence를 Round 02 실제 결과로 대신하지 않는다.
+
+## 오류·보안
+
+오류는 **원인 확인 → 최소 수정 → 재실행 → 검증** 순서로 처리하고, 정상 환경을 무조건 재설치하지 않는다.
+
+Password, API Key, Token, Private Key, Secret, Cloud Credential을 Repository·Chat·Evidence에 노출하지 않는다.
