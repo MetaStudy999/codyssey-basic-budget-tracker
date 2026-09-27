@@ -50,3 +50,16 @@
 - [ ] 대안과 한계 설명 가능
 - [ ] 공식 요구 + Runtime + Verification + Evidence + Evaluation 설명 충족
 - [ ] 조건 충족 후에만 **B2-1 CLEAR**
+
+
+## Gate 9 — 발표자료
+- [ ] `presentation/README.md` 기준 확인
+- [ ] 실제 Evidence 기반 OUTLINE 작성
+- [ ] Slide ↔ Requirement ↔ Implementation ↔ Evidence 연결
+- [ ] 발표 SCRIPT 준비
+- [ ] 실제 Runtime Screenshot 준비
+- [ ] 필요한 Diagram / 개념 Image Asset 준비
+- [ ] Figma Master Template에 배치
+- [ ] PDF/PPT Export 검토
+- [ ] Secret·개인정보 제거 확인
+- [ ] 30초 핵심 설명 및 예상 질문 준비
