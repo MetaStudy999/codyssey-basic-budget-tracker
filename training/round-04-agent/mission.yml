@@ -9,6 +9,9 @@ execution_round: round-04-agent
 execution_root: training/round-04-agent
 authoring_root: training/round-04-agent/04-src
 planning_root: training/round-04-agent/00-plan
+requirements_root: training/round-04-agent/01-requirements
+analysis_root: training/round-04-agent/02-analysis
+design_root: training/round-04-agent/03-design
 test_root: training/round-04-agent/05-tests
 evidence_root: training/round-04-agent/06-evidence
 evaluation_root: training/round-04-agent/07-evaluation
