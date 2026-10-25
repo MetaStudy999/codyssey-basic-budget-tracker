@@ -11,3 +11,7 @@
 - [공통 시각·증빙 원본](05-assets/README.md)
 
 [00단계 제작 계획](../00-plan/SLIDE-PACKAGE-PLAN.md) · **PLAN_ONLY / FILES_NOT_CREATED**
+
+## 학습 활동 확장
+
+[용어·개념도·코드 추적·실습·디버깅·문제은행·복습](06-learning-activities/README.md). **4종 슬라이드 목표는 그대로 유지**, 실제 자료는 미작성.
