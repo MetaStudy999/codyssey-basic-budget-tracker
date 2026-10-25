@@ -30,4 +30,4 @@ learning_quality_gate_count: 8
 learning_mastery_levels: 5
 learning_plan_root: training/round-04-agent/00-plan
 learning_activities_root: training/round-04-agent/08-presentation/06-learning-activities
-learning_system_standard: standards/LEARNER-CENTERED-AI-LEARNING-STANDARD.md
+learning_system_standard: https://github.com/MetaStudy999/codyssey-basic/blob/main/standards/LEARNER-CENTERED-AI-LEARNING-STANDARD.md
