@@ -1,0 +1,22 @@
+schema_version: "1.0"
+generation: "CODYSSEY Round 02 / 제2기"
+mission_id: "B2-1"
+title: "나만의 용돈 기입장 프로그램 만들기"
+stable_topic: "budget-tracker"
+repository: "MetaStudy999/codyssey-basic-budget-tracker"
+requirement: "REQUIRED"
+execution_round: round-04-agent
+execution_root: training/round-04-agent
+authoring_root: training/round-04-agent/04-src
+planning_root: training/round-04-agent/00-plan
+test_root: training/round-04-agent/05-tests
+evidence_root: training/round-04-agent/06-evidence
+evaluation_root: training/round-04-agent/07-evaluation
+presentation_root: training/round-04-agent/08-presentation
+handoff_root: training/round-04-agent/09-handoff
+owner_path_directive: APPROVED_2026-10-25
+owner_mission_development_approval: PENDING
+mission_execution: NOT_STARTED
+runtime: NOT_VERIFIED
+clear: NOT_VERIFIED
+legacy_rounds: REFERENCE_ONLY
