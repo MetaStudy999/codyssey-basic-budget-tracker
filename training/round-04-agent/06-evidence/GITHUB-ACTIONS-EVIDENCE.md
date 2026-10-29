@@ -7,13 +7,16 @@
 | EV-CI-01 | Ubuntu / Python3.10,3.12 | [1회차 13/13 PASS](https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/40960764834) | `2145b4447762d851bfa65eaaa57ecd4e9b1fb6b7` |
 | EV-CI-02 | Ubuntu / Python3.10,3.12 | [2회차 20/20 PASS](https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/40960980367) | `bdf42bdabcf0f3196bf242a20374c753f920bc6c` |
 | EV-CI-03 | Ubuntu / Python3.10,3.12 | [3회차 21/21 PASS](https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/40961200893) | `024e59bb719f9b1d0c266399780d2ccee960d716` |
+| EV-CI-04 | main 병합 후 Ubuntu Python3.10/3.12 | [21/21 각각 PASS](https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/40962189408) | `5d62bd97a1c54a642ed0c9dc11455eed761ec718` |
 
 GitHub Job 3회차: `123754104509` (Python3.10), `123754104184` (Python3.12), 각 `Ran 21 tests` / `OK`. [테스트 설명](../05-tests/RUNTIME-TEST-RESULTS.md) 참조.
 
 ## 미증빙 항목
 - 사용자의 WSL2 실제 실행·입문자 독립 시연: **NOT_VERIFIED**.
 - 07 공식 동료평가에서의 구술 설명·추가 질문: **NOT_VERIFIED**.
-- 08 슬라이드 실물: 준비/제작 별도 점검.
+- 08 슬라이드 실물: 현재 ChatGPT 대화에서 PPTX/PDF 4종 파일을 생성했으나 GitHub 보관과 사용자의 시연 자료 검증은 별도.
 - 비용·배포: CLI 과제에 클라우드 배포 요구 없음.
 
 이 문서의 CI 결과는 서버가 보고한 성공 로그에 근거하며, 원래 수행하지 않은 시험을 수행했다고 표현하지 않습니다.
+
+**마지막 실증:** PR #9 병합 후 main 실행 40962189408, Python3.10 Job 123757580996 및 Python3.12 Job 123757580482, 각각 `Ran 21 tests` / `OK` / success. 사용자 WSL2 검증은 별도로 남아 있습니다.

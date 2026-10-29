@@ -23,3 +23,10 @@ dist/
 
 # 실제 런타임 로그
 *.log
+
+# B2-1 Round 04: prevent accidental commits of real ledger data
+training/round-04-agent/04-src/data/
+training/round-04-agent/04-src/*.csv
+**/transactions.jsonl
+**/categories.jsonl
+**/budgets.jsonl

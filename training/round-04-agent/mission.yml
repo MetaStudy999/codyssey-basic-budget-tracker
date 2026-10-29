@@ -42,7 +42,7 @@ design_hardening_scope: "stages 00-03; no source changes"
 
 implementation_scope: training/round-04-agent/04-src
 last_ci_verified_sha: 024e59bb719f9b1d0c266399780d2ccee960d716
-last_ci_verified_run: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/40961200893
+last_ci_verified_run: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/40962189408
 ci_python_versions: "3.10,3.12"
 ci_tests_per_version: 21
 ci_status: PASS
@@ -51,3 +51,7 @@ peer_evaluation: NOT_VERIFIED
 slides_local_files: CREATED
 slides_git_repository_archive: NOT_UPLOADED
 handoff_status: PREPARED
+
+main_merge_sha: 5d62bd97a1c54a642ed0c9dc11455eed761ec718
+main_ci_status: PASS_21_OF_21_PYTHON_3_10_3_12
+security_gitignore_review: DATA_PATHS_EXCLUDED
