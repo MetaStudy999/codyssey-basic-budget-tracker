@@ -1,5 +1,7 @@
 > **2026-10-25 신규 미션 작성 경로(B2-1):** [`training/round-04-agent/`](training/round-04-agent/README.md) — 신규 코드는 `training/round-04-agent/04-src/`에만 작성합니다. 기존 Round 01~03 및 루트의 내용은 과거 수행·참고 이력으로 보존합니다. **현재 새 Round는 PLAN_ONLY / NOT_STARTED이며 사용자 개발 승인 전 코드 실행·수정·배포 금지**입니다. 중앙 기준: [15개 미션 신규 실행 허브](https://github.com/MetaStudy999/codyssey-basic/tree/main/training/round-04-agent).
 
+> **자료 보관:** 기존 Round 01·02는 [`training/archive/`](training/archive/README.md)로 이동했으며 파일 원본을 보존합니다.
+
 # Codyssey Basic B2-1 — 나만의 용돈 기입장 프로그램 만들기
 
 ## 현재 훈련 상태
@@ -21,11 +23,11 @@ Reference Complete Version과 자체감사를 준비했습니다. 실제 CLI 실
 
 ## Reference 시작 위치
 
-- `training/round-01-clear/REFERENCE-STATUS.md` — Phase A 자체감사 결과
-- `training/round-01-clear/REFERENCE-BUILD.md` — 기준 구현/검증 설계
-- `training/round-01-clear/BEGINNER-GUIDE.md` — Phase C 단계별 실습
-- `training/round-01-clear/CHECKLIST.md` — Mission/Evaluation/CLEAR Gate
-- `training/round-01-clear/reference/README.md` — Reference 앱 사용법
+- `training/archive/round-01-clear/REFERENCE-STATUS.md` — Phase A 자체감사 결과
+- `training/archive/round-01-clear/REFERENCE-BUILD.md` — 기준 구현/검증 설계
+- `training/archive/round-01-clear/BEGINNER-GUIDE.md` — Phase C 단계별 실습
+- `training/archive/round-01-clear/CHECKLIST.md` — Mission/Evaluation/CLEAR Gate
+- `training/archive/round-01-clear/reference/README.md` — Reference 앱 사용법
 
 ## 기술 스택
 
@@ -42,7 +44,7 @@ Reference Complete Version과 자체감사를 준비했습니다. 실제 CLI 실
 Repository 루트에서:
 
 ```bash
-export PYTHONPATH="$PWD/training/round-01-clear/reference"
+export PYTHONPATH="$PWD/training/archive/round-01-clear/reference"
 python3 -m budget_app --help
 ```
 
@@ -122,15 +124,15 @@ Import는 정상 행은 저장하고 깨진 행은 건너뛴 뒤 `imported`, `sk
 ## 테스트/검증
 
 ```bash
-bash training/round-01-clear/environment/verify.sh
+bash training/archive/round-01-clear/environment/verify.sh
 ```
 
 또는 unit test만:
 
 ```bash
-export PYTHONPATH="$PWD/training/round-01-clear/reference"
+export PYTHONPATH="$PWD/training/archive/round-01-clear/reference"
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover \
-  -s training/round-01-clear/reference/tests \
+  -s training/archive/round-01-clear/reference/tests \
   -p 'test_*.py' -v
 ```
 

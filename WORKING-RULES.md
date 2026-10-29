@@ -21,10 +21,11 @@
 
 ## 현재 Round
 
-- 기존 참고: `training/round-01-clear/`
-- 제2기 신규 수행: `training/round-02-clear/`
-- 시작 문서: [training/round-02-clear/README.md](training/round-02-clear/README.md)
-- 진행 체크: [training/round-02-clear/CHECKLIST.md](training/round-02-clear/CHECKLIST.md)
+- 기존 참고: `training/archive/round-01-clear/`
+- 과거 제2기 수행 자료(보관): `training/archive/round-02-clear/`
+- 현재 신규 작업 경로: `training/round-04-agent/`
+- 현재 시작 문서: [training/round-04-agent/README.md](training/round-04-agent/README.md)
+- 과거 점검 기록: [training/archive/round-02-clear/CHECKLIST.md](training/archive/round-02-clear/CHECKLIST.md)
 - 공통 표준: [ROUND-02-MISSION-EXECUTION-STANDARD.md](https://github.com/MetaStudy999/codyssey-basic/blob/main/standards/ROUND-02-MISSION-EXECUTION-STANDARD.md)
 
 ## 빠른 적용
@@ -34,7 +35,7 @@
 → 평가항목 먼저
 → 최소 통과 경로
 → 필요한 개념만 학습
-→ round-02-clear에서 한 단계씩 실제 실행
+→ 승인된 round-04-agent 절차에 따라 한 단계씩 실제 실행
 → Verification + Evidence
 → 평가 설명
 → 모의평가
