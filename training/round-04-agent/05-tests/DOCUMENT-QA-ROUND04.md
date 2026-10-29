@@ -1,6 +1,6 @@
 # B2-1 — Round 04 문서 독립 QA 기록
 
-> **문서 설계에 한정된 검사**이며 실제 프로그램 실행 PASS가 아니다. RUNTIME/LEARNER/CLEAR=NOT_VERIFIED. 최종 원격 재조회 전 상태: RECHECK_PENDING.
+> **문서 설계에 한정된 검사**이며 실제 프로그램 실행 PASS가 아니다. RUNTIME/LEARNER/CLEAR=NOT_VERIFIED. 3회 검사 + 결함 보완 후 독립 재검증: DOC_STATIC_PASS(문서에 한정).
 
 ## 검증 1회차: 공식 요구·평가 매핑
 - 01-requirements 공식 PDF 바탕 내부 REQ-01~23 23건과 BON-01~04 4건 구분.
@@ -25,4 +25,4 @@
 5. 완료 시 DOC_STATIC_PASS를 문서 수준에서만 기록, 실행·학습·평가·CLEAR는 별도 판정.
 
 ## 재검증 결과
-PENDING — 위 조건을 원격에서 재조회 후 상태 갱신한다.
+PASS — 3차 점검에서 발견한 잘못된 상위 README를 원본 기반으로 복구하고, 누락된 QA 보고서를 생성한 뒤 **원격 브랜치 재조회 결과** 주요 안내/QA 문서 5개·상대 링크 42개·오류 0건을 확인했다. 기존 archive 25파일, 03 설계 8독립 문서+README 1개 보존. 전체 23개 REQ가 T-ID에 연결됨을 재확인. 이 보고서 자체의 병합 후 URL/경로와 최종 SHA는 추후 main 확인 사항. 기능 실행 미실시.

@@ -15,14 +15,14 @@ Python 가계부가 **명령 입력 → 유효성 검사 → 비즈니스 규칙
 ## 03-1~03-8 독립 문서·인계
 | 세부 단계 | 직접 열기 | 평가 연결 | 문서 작성 상태 |
 |---|---|---|---|
-| 03-1 | [공식 요구·CORE/BONUS·수용 기준](03-1-REQUIREMENTS-SCOPE.md) | E1~E4 | 작성됨 / 정적 QA 진행 |
-| 03-2 | [CLI 입력·출력·명령·도움말](03-2-CLI-FLOW.md) | E1 | 작성됨 / 정적 QA 진행 |
-| 03-3 | [모델·클래스·저장구조](03-3-ARCHITECTURE.md) | E2/E4 | 작성됨 / 정적 QA 진행 |
-| 03-4 | [이벤트·데이터·상태 흐름](03-4-DATA-CONTROL-FLOW.md) | E1/E3 | 작성됨 / 정적 QA 진행 |
-| 03-5 | [입력·오류·비밀·안전성](03-5-ERROR-SECURITY.md) | E1/E4 | 작성됨 / 정적 QA 진행 |
-| 03-6 | [시험 ID·예상·증빙 계획](03-6-TEST-EVIDENCE-PLAN.md) | E1~E4 | 작성됨 / 정적 QA 진행 |
-| 03-7 | [학습 설계(기존 파일 재사용)](LEARNING-DESIGN.md) | L1~L5/QG | 작성됨 / 정적 QA 진행 |
-| 03-8 | [종합 독립 검토·04 인계](03-8-INTEGRATED-REVIEW.md) | 문서 QA | 작성됨 / 정적 QA 진행 |
+| 03-1 | [공식 요구·CORE/BONUS·수용 기준](03-1-REQUIREMENTS-SCOPE.md) | E1~E4 | DOC_STATIC_PASS (설계 문서) |
+| 03-2 | [CLI 입력·출력·명령·도움말](03-2-CLI-FLOW.md) | E1 | DOC_STATIC_PASS (설계 문서) |
+| 03-3 | [모델·클래스·저장구조](03-3-ARCHITECTURE.md) | E2/E4 | DOC_STATIC_PASS (설계 문서) |
+| 03-4 | [이벤트·데이터·상태 흐름](03-4-DATA-CONTROL-FLOW.md) | E1/E3 | DOC_STATIC_PASS (설계 문서) |
+| 03-5 | [입력·오류·비밀·안전성](03-5-ERROR-SECURITY.md) | E1/E4 | DOC_STATIC_PASS (설계 문서) |
+| 03-6 | [시험 ID·예상·증빙 계획](03-6-TEST-EVIDENCE-PLAN.md) | E1~E4 | DOC_STATIC_PASS (설계 문서) |
+| 03-7 | [학습 설계(기존 파일 재사용)](LEARNING-DESIGN.md) | L1~L5/QG | DOC_STATIC_PASS (설계 문서) |
+| 03-8 | [종합 독립 검토·04 인계](03-8-INTEGRATED-REVIEW.md) | 문서 QA | DOC_STATIC_PASS (설계 문서) |
 
 실제 3회 점검 결과는 [문서 QA 보고서](../05-tests/DOCUMENT-QA-ROUND04.md)에서 확인한다.
 

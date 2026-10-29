@@ -1,6 +1,6 @@
 # B2-1 — 나만의 용돈 기입장 프로그램 만들기 | Round 04 Agent
 
-> 신규 작업 경로 승인: 2026-10-25. **00~03 문서 작성·정적 검토 진행**. 신규 코드·실행은 **NOT_STARTED**, 사용자 별도 개발 승인 **PENDING**. RUNTIME/LEARNER/CLEAR=NOT_VERIFIED.
+> 신규 작업 경로 승인: 2026-10-25. **00~03 문서 작성·정적 검토 완료**. 신규 코드·실행은 **NOT_STARTED**, 사용자 별도 개발 승인 **PENDING**. RUNTIME/LEARNER/CLEAR=NOT_VERIFIED.
 
 - 공식 기준: 제2기 Mission PDF 및 평가 요구사항
 - Canonical Repository: `MetaStudy999/codyssey-basic-budget-tracker`
