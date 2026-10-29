@@ -1,24 +1,46 @@
-# B2-1 — 신규 설계
+# B2-1 — 03단계: 상세 설계 8개 문서 안내
 
-**PLAN_ONLY / NOT_STARTED / NOT_VERIFIED.** 미션에 적합한 화면·CLI/API·모듈 구조, 데이터·이벤트 흐름, 보안·오류·시험과 증빙 설계.
+> 03-1~03-8은 **입문자에게 설명 가능한 설계 자료**이며 실제 신규 프로그램은 NOT_STARTED. 개발 승인 PENDING, RUNTIME/LEARNER/CLEAR=NOT_VERIFIED.
+> 공통 필수 표준: https://github.com/MetaStudy999/codyssey-basic/blob/main/standards/ROUND-04-AGENT-MISSION-PROCESS-STANDARD.md
 
-새 Round 개발 실행 및 검증 결과는 사용자 별도 승인 후에만 기록합니다.
+## 30초 요약
+Python 가계부가 **명령 입력 → 유효성 검사 → 비즈니스 규칙 → 3종 파일 저장·조회 → 결과 또는 오류 출력**으로 동작하도록 설계한다. 공식 요구와 평가를 충족하는지 8개 문서를 하나씩 검사한다.
 
-## B2-1 — 15개 미션 공통 필수 기획·설계·검증 절차
+## 3~5분 Quick Start
+1. [01 공식 요구 표](../01-requirements/REQUIREMENT-TRACEABILITY.md)에서 필수 REQ-01~23을 확인한다.
+2. [02 과거 자료 분석](../02-analysis/LEGACY-GAP-ANALYSIS.md)에서 기존 참조와 미실행 검증 범위를 구별한다.
+3. 아래 **03-1**부터 순서대로 문서를 열어 Mermaid 도식과 예상 결과를 읽고, "왜 이 방법인가?"를 한 문장으로 설명한다.
+4. [03-8 종합 점검](03-8-INTEGRATED-REVIEW.md)에서 설계·링크·승인 경계를 확인한다. 04 신규 소스는 별도 개발 승인 후 시작한다.
 
-**Owner 지시(2026-10-27):** [B1-1~B7-2 15개 전 미션 필수 프로세스](https://github.com/MetaStudy999/codyssey-basic/blob/main/standards/ROUND-04-AGENT-MISSION-PROCESS-STANDARD.md)를 이 미션에도 **의무 적용**합니다. 공식 해당 미션 PDF·평가 기준이 최우선이며 B1-1의 웹 기술/완료 판정을 그대로 복사하지 않습니다.
+## 03-1~03-8 독립 문서·인계
+| 세부 단계 | 직접 열기 | 평가 연결 | 문서 작성 상태 |
+|---|---|---|---|
+| 03-1 | [공식 요구·CORE/BONUS·수용 기준](03-1-REQUIREMENTS-SCOPE.md) | E1~E4 | 작성됨 / 정적 QA 진행 |
+| 03-2 | [CLI 입력·출력·명령·도움말](03-2-CLI-FLOW.md) | E1 | 작성됨 / 정적 QA 진행 |
+| 03-3 | [모델·클래스·저장구조](03-3-ARCHITECTURE.md) | E2/E4 | 작성됨 / 정적 QA 진행 |
+| 03-4 | [이벤트·데이터·상태 흐름](03-4-DATA-CONTROL-FLOW.md) | E1/E3 | 작성됨 / 정적 QA 진행 |
+| 03-5 | [입력·오류·비밀·안전성](03-5-ERROR-SECURITY.md) | E1/E4 | 작성됨 / 정적 QA 진행 |
+| 03-6 | [시험 ID·예상·증빙 계획](03-6-TEST-EVIDENCE-PLAN.md) | E1~E4 | 작성됨 / 정적 QA 진행 |
+| 03-7 | [학습 설계(기존 파일 재사용)](LEARNING-DESIGN.md) | L1~L5/QG | 작성됨 / 정적 QA 진행 |
+| 03-8 | [종합 독립 검토·04 인계](03-8-INTEGRATED-REVIEW.md) | 문서 QA | 작성됨 / 정적 QA 진행 |
 
-**각 세부 단계 반복:** 공식 요구·현재 HEAD 확인 → **기획 프롬프트 V0.1** → 누락·위험 ID 검토 → **최종 V1.0** 보완 → 입문자용 용어(한글/영문/약어)·비유·Mermaid·짧은 설명/코드·예상 결과·오류·종이 실습 → GitHub 독립 정적 QA(링크·앵커·SHA·승인) → 해당 문서 PASS/FAIL/NOT_VERIFIED 및 인계. 문서 결함을 발견하면 해당 단계에서 수정·재검증합니다.
+실제 3회 점검 결과는 [문서 QA 보고서](../05-tests/DOCUMENT-QA-ROUND04.md)에서 확인한다.
 
-| 03 세부 단계 | 미션에 맞게 작성할 독립 MD 산출물 | 현재 |
-|---|---|---|
-| 03-1 | 공식 요구·CORE/BONUS·평가·학습목표·범위·수용 기준 | NOT_STARTED |
-| 03-2 | 정보·사용자/명령 흐름·인터페이스 | NOT_STARTED |
-| 03-3 | 파일·모듈·의존성·환경·배치 구조 | NOT_STARTED |
-| 03-4 | 이벤트·상태·데이터·제어 흐름 | NOT_STARTED |
-| 03-5 | 입력·출력·보안·오류·예외 처리 | NOT_STARTED |
-| 03-6 | 시험 ID·입력·기대 결과·접근성/품질·증빙 계획 | NOT_STARTED |
-| 03-7 | 학습자 교육·PRIMM·H1~H4·L1~L5·사전/사후 | NOT_STARTED |
-| 03-8 | 종합 요구/문서 검증·승인 경계·04 인계 | NOT_STARTED |
+## 모든 세부 단계의 7단계 공통 절차
+공식 근거/실제 HEAD 확인 → 기획 프롬프트 V0.1 → 누락·위험 ID 확인 → 최종 V1.0 → 입문자용 설명(용어·비유·Mermaid·종이 실습) → GitHub 독립 정적 QA → 문서 판정·다음 단계 인계.
 
-**파일/상태 규칙:** 각 단계마다 직접 열 수 있는 MD 파일을 만들고 이 README를 통합 목차·3~5분 Quick Start·현재 상태표로 갱신합니다. **이 표는 앞으로의 필수 절차를 등록한 것이지 8개 설계 문서 완료가 아닙니다**. `04-src/` 개발·실행·배포·병합·실제 교육/평가는 별도 사용자 승인 전 금지, 기존 Round·루트·증빙 보존, `RUNTIME/LEARNER/CLEAR=NOT_VERIFIED`.
+## 구조 개요 (Mermaid, 교육용)
+~~~mermaid
+flowchart LR
+ A["CLI 입력"] --> B["서비스 규칙"]
+ B --> C["3개 JSONL 파일"]
+ C --> D["거래 조회/요약"]
+ B --> E["오류+힌트"]
+ D --> F["터미널 출력"]
+~~~
+- 명령줄 인터페이스(Command-Line Interface, CLI): 터미널 명령으로 프로그램을 제어한다.
+- 파일 입출력(Input/Output, I/O): 프로그램 종료 후 데이터를 보존하고 다시 읽는다.
+- JSONL: 한 줄에 JSON 객체 하나를 저장한다. 이름이 비슷한 JSON 배열 파일과 구분한다.
+
+## 상태와 한계
+문서 설계만으로 기능이 동작하거나 학습자가 L4/L5 수준이라고 선언하지 않는다. 05 실제 시험·06 증빙·07 평가는 04 승인된 신규 구현이 준비된 뒤 진행한다. 이전 archive의 코드·Evidence·PASS를 신규 기준으로 사용하지 않는다.

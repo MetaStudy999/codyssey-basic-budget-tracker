@@ -2,7 +2,7 @@
 
 **30초 요약:** 이 미션은 **Python으로 수입·지출 관리**에 대해 배웁니다. 첫 번째 용어는 <mark>리스트(List)</mark>입니다. **개념 하나 → 그림 하나 → 질문 하나**를 이해한 후 다음으로 넘어가면 됩니다.
 
-> **00단계: PLAN_ONLY** · **01 공식 요구: NOT_STARTED** · **새 코드: NOT_STARTED / 승인 PENDING** · **실행·학습 성취: NOT_VERIFIED**
+> **00단계: 계획 문서 작성** · **01 공식 요구: DOC 작성, 3회 QA 중** · **새 코드: NOT_STARTED / 승인 PENDING** · **실행·학습 성취: NOT_VERIFIED**
 
 **읽는 순서:** 10초에 목표 파악 → 1분에 첫 개념 그림 보기 → 5분에 자기 설명·종이 재현.
 
@@ -73,8 +73,8 @@ flowchart LR
 | 구분 | 상태 |
 |---|---|
 | **00단계 교육·계획 개요** | PLAN_ONLY — 문서 작성 |
-| **01단계 공식 요구 분석** | NOT_STARTED |
-| **03단계 상세 설계** | NOT_STARTED |
+| **01단계 공식 요구 분석** | 신규 문서 작성, 정적 QA 진행 |
+| **03단계 상세 설계** | 03-1~03-8 문서 작성, 정적 QA 진행 |
 | **04단계 신규 코드** | NOT_STARTED / 승인 PENDING |
 | **실제 실행·슬라이드·학습자 숙달** | NOT_VERIFIED 또는 NOT_STARTED |
 
@@ -86,13 +86,17 @@ flowchart LR
 
 | 더 알고 싶은 내용 | 문서 |
 |---|---|
+| **전체 00~09 실행계획** | [단계별 수행 마스터 계획](EXECUTION-MASTER-PLAN.md) |
+| **01 요구·평가 추적표** | [공식 요구사항 23개 추적](../01-requirements/REQUIREMENT-TRACEABILITY.md) |
+| **02 기존 자산 비교** | [archive·갭 분석](../02-analysis/LEGACY-GAP-ANALYSIS.md) |
+| **03-1~03-8 설계 목차** | [상세 설계](../03-design/README.md) |
 | 용어·아키텍처·학습 예정 코드 | [기술 학습 개요](TECHNICAL-LEARNING-OUTLINE.md) |
 | PRIMM·AI 힌트·L1~L5 평가 계획 | [학습체계 계획](LEARNING-SYSTEM-PLAN.md) |
 | 발표·학습·심화·복습 4종 자료 | [슬라이드 계획](SLIDE-PACKAGE-PLAN.md) |
 | 후속 개발단계 | [01 요구](../01-requirements/README.md) · [02 분석](../02-analysis/README.md) · [03 설계](../03-design/README.md) |
 | 전체 공통 교육 규칙 | [중앙 학습 표준](https://github.com/MetaStudy999/codyssey-basic/blob/main/standards/LEARNER-CENTERED-AI-LEARNING-STANDARD.md) |
 
-**다음 단계:** 공식 미션 PDF 및 평가표를 확인하는 01단계입니다. 새로운 코드 개발·실행은 아직 승인되지 않았습니다.
+**다음 단계:** 01·02 작성된 공식 기준과 과거 분석을 읽고 03 설계 문서를 차례로 검토합니다. 새로운 코드 개발·실행은 아직 승인되지 않았습니다.
 
 ---
 
