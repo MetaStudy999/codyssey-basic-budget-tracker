@@ -52,10 +52,15 @@
 - `DOC_CONTENT_REVIEW_PASS`는 이번 문서의 구성·정합성에 한정한다. 소스, Runtime, 학습 MASTER, 미션 CLEAR 판정으로 승격하지 않는다.
 
 ## GitHub 반영 후 확인 항목
-- [ ] main에 이 QA 파일·새 프롬프트 등록표·03-1~03-8 존재
-- [ ] 새 문서에서 상대 링크 누락 없음
-- [ ] archive Round01/02 SHA 원본과 동일
-- [ ] 04-src 소스 미작성, 승인 PENDING, Runtime NOT_VERIFIED
-- [ ] PR 병합 결과 확인
+- [x] main에 이 QA 파일·새 프롬프트 등록표·03-1~03-8 존재
+- [x] 새 문서에서 상대 링크 누락 없음 (PR #7 병합 전 최종 25개 문서·상대 링크 113개 오류 0, 병합 후 주요 문서 재확인)
+- [x] archive Round01/02 SHA 원본과 동일
+- [x] 04-src 소스 미작성, 승인 PENDING, Runtime NOT_VERIFIED
+- [x] PR 병합 결과 확인 (PR #7 merged)
 
-위 체크박스는 **main 반영 후 재검증 기록으로 채워야 하며**, 본 문서 작성만으로 완료 처리하지 않는다.
+## PR #7 병합 후 검증 기록 (2026-10-30)
+- 변경 병합: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/pull/7
+- 병합 커밋: `51ee5f244d237316168b2a2141f05d1cb912a7d9`
+- 확인한 archive tree SHA: Round01 `e13a05bd4f6f073cf16f6b4da9efe5abf6a55111`, Round02 `de779d73e942887f9f8c0937f3cab465153409ba`.
+- `04-src/`는 `README.md` 한 개만 존재, `owner_mission_development_approval=PENDING`, `mission_execution=NOT_STARTED`, `runtime=NOT_VERIFIED` 유지.
+- **결론:** 이번 00~03의 문서 내용·구조 검토에 한정하여 PASS. 실제 Python 실행과 학습자 독립 시연·미션 CLEAR는 여전히 미검증. 위 체크박스는 조회 근거에 따라 갱신했으며 미실행 검증을 PASS로 바꾸지 않는다.
