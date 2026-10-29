@@ -28,8 +28,12 @@ class Transaction:
     def from_dict(cls, value: dict) -> "Transaction":
         try:
             result = cls(**value)
-            if not isinstance(result.tags, list):
-                raise ValueError("tags must be a list")
+            if (not isinstance(result.tags, list) or
+                not all(isinstance(tag, str) for tag in result.tags) or
+                not isinstance(result.memo, str) or
+                not isinstance(result.category, str) or
+                not isinstance(result.amount, int) or isinstance(result.amount, bool)):
+                raise ValueError("invalid persisted field type")
             validate_date(result.date)
             validate_type(result.type)
             validate_amount(result.amount)

@@ -68,6 +68,14 @@ class EdgeTests(unittest.TestCase):
         self.assertIn("[힌트]", err.getvalue())
         self.assertNotIn("Traceback", err.getvalue())
 
+    def test_corrupt_persisted_field_type_is_rejected(self):
+        import json
+        source = {"id": "bad-type", "date": "2026-10-30", "type": "expense",
+                  "category": "food", "amount": "1000", "memo": "", "tags": []}
+        (self.data / "transactions.jsonl").write_text(json.dumps(source) + "\n", encoding="utf-8")
+        with self.assertRaises(BudgetError):
+            list(self.app.list())
+
 
 if __name__ == "__main__":
     unittest.main()
