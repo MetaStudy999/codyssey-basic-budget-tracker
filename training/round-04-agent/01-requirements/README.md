@@ -1,5 +1,20 @@
-# B2-1 — 공식 요구사항
+# B2-1 — 01단계 공식 요구사항·평가 매핑
 
-**PLAN_ONLY / NOT_STARTED / NOT_VERIFIED.** 제2기 미션 PDF, 평가 체크리스트, 필수·선택 분류, 수용기준과 요구사항 추적표.
+> 공식 PDF 기반 기준 작성. **DOC 검토 대상 / 실제 구현·검증 NOT_STARTED**.
 
-새 Round 개발 실행 및 검증 결과는 사용자 별도 승인 후에만 기록합니다.
+## 3분 Quick Start
+1. [공식 요구사항 추적표](REQUIREMENT-TRACEABILITY.md)에서 REQ-01~23의 근거 PDF 쪽과 필수 범위를 확인한다.
+2. [수용 기준·평가 연결표](ACCEPTANCE-CRITERIA.md)에서 각 요구가 어떻게 검증되는지 읽는다.
+3. [학습 목표 연결](LEARNING-OBJECTIVES.md)을 읽고 자신의 말로 WHAT/WHY를 설명한다.
+4. 다음 [02 기존 자료 분석](../02-analysis/README.md)으로 이동한다.
+
+## 공식 출처
+- 최우선: 제2기 현재 B2-1 공식 미션 PDF (사용자 제공, 10쪽)
+- 다음: 제2기 오리엔테이션 PDF
+- 기존 미션·평가: 저장소 루트 b2-1-mission.md, b2-1-evaluation.md
+- 참고만: training/archive/round-01-clear/ 및 round-02-clear/
+
+## 핵심 주의
+CORE(필수) 23개 추적 ID와 BONUS(선택) 4개를 구분한다. REQ 번호는 문서 작업용이다. 모든 명령은 --help를 제공해야 하며 3종 파일 영속성·yield·데코레이터·타입 힌트·오류 종료 코드가 필수 범위이다. 공식 PDF에서 표기가 상충하거나 깨진 부분은 추적표 C절에서 명시한다.
+
+**다음 단계:** 02 분석. 04-src 개발·WSL2 실행·배포는 별도 명시적 승인 전 금지.

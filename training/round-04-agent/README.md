@@ -1,20 +1,20 @@
 # B2-1 — 나만의 용돈 기입장 프로그램 만들기 | Round 04 Agent
 
-> 사용자 신규 미션 작업 경로 지정: 2026-10-25. 현재 상태 **PLAN_ONLY / NOT_STARTED**이며, 폴더 생성은 개발·실행·배포 승인이나 PASS가 아닙니다.
+> 신규 작업 경로 승인: 2026-10-25. **00~03 문서 작성·정적 검토 완료**. 신규 코드·실행은 **NOT_STARTED**, 사용자 별도 개발 승인 **PENDING**. RUNTIME/LEARNER/CLEAR=NOT_VERIFIED.
 
 - 공식 기준: 제2기 Mission PDF 및 평가 요구사항
 - Canonical Repository: `MetaStudy999/codyssey-basic-budget-tracker`
 - 신규 작업 경로: `training/round-04-agent/`
 - 유일한 신규 코드 작성 경로: `training/round-04-agent/04-src/`
 - ChatGPT 기획·개발 주도, Agent Codyssey MCP + WSL2 Ubuntu Codex 실행·검증
-- 기존 코드·브랜치·배포·증빙 보존; 이전 Round 자료는 REFERENCE_ONLY
+- 이전 Round 자료는 `training/archive/round-01-clear/`, `round-02-clear/`에 보관·REFERENCE_ONLY; 신규 코드는 아직 없음
 
 | 작업 폴더 | 목적 |
 |---|---|
-| `00-plan/` | 공식 요구·계획·승인·목차 |
-| `01-requirements/` | 공식 미션·평가 요구사항 |
-| `02-analysis/` | 기존 자료·환경·미완료 분석 |
-| `03-design/` | 신규 시스템·화면·코드 설계 |
+| `00-plan/` | [마스터 실행계획](00-plan/EXECUTION-MASTER-PLAN.md)·승인·목차 |
+| `01-requirements/` | [공식 REQ-01~23](01-requirements/README.md)·수용 기준 |
+| `02-analysis/` | [기존 자료·갭 분석](02-analysis/README.md) |
+| `03-design/` | [03-1~03-8 독립 설계](03-design/README.md) |
 | `04-src/` | 신규 미션 소스 전용 |
 | `05-tests/` | 테스트·회귀 검증 |
 | `06-evidence/` | 실제 실행 증빙·SHA |
