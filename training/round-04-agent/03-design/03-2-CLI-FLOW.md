@@ -43,3 +43,11 @@ V0.1: add/list 중심 CLI. P04 누락 명령 → 10 기능군 완비, P05 형식
 
 ## 검증·인계
 REQ-01,08~18,20과 CLI 계약 비교. 입력값 보호(공백/경로 등)는 03-5에서 세부 처리. 다음 [03-3](03-3-ARCHITECTURE.md).
+
+## 구현 전 CLI 계약 상세화(설계 선택)
+- `python -m budget_app --data-dir ./data <command>`와 같이 전역 데이터 경로 옵션은 **하위 명령 앞에** 둔다. 모든 명령의 `--help`가 동작해야 한다.
+- update는 `update --id <id> [--date ...] [--amount ...]` 형식의 옵션 기반을 선택하며, 바꾸지 않은 필드는 유지한다.
+- `export --out report.csv --month 2026-10`처럼 사용자 지정 파일로 출력할 수 있다. 기본적으로 기존 파일 덮어쓰기 거부, `--overwrite` 지정 시 허용(내부 편의 옵션·공식 필수 아님).
+- import는 `import --from import.csv`. 정상 행만 저장되고 불량 행이 있으면 imported/skipped/행별 원인 및 exit=2(설계 정책). 가져올 때 중복을 자동 제거한다고 주장하지 않는다.
+- 명령별 입력·출력의 구분: list/search/summary는 내부 파일 읽기, export는 외부 CSV 쓰기, add/update/delete 등은 내부 파일 변경.
+- 재사용 가능한 프롬프트·위험 검토는 [설계 프롬프트 기록](DESIGN-PROMPTS-AND-REVIEWS.md) 참조.

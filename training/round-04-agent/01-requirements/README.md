@@ -5,7 +5,7 @@
 ## 3분 Quick Start
 1. [공식 요구사항 추적표](REQUIREMENT-TRACEABILITY.md)에서 REQ-01~23의 근거 PDF 쪽과 필수 범위를 확인한다.
 2. [수용 기준·평가 연결표](ACCEPTANCE-CRITERIA.md)에서 각 요구가 어떻게 검증되는지 읽는다.
-3. [학습 목표 연결](LEARNING-OBJECTIVES.md)을 읽고 자신의 말로 WHAT/WHY를 설명한다.
+3. [학습 목표 연결](LEARNING-OBJECTIVES.md)을 읽고 자신의 말로 WHAT/WHY를 설명한다. 정상/오류의 **구체적 기대값**은 [수용 기준](ACCEPTANCE-CRITERIA.md)의 추가 표를 본다.
 4. 다음 [02 기존 자료 분석](../02-analysis/README.md)으로 이동한다.
 
 ## 공식 출처

@@ -38,3 +38,18 @@ CLI/모델/3종 파일 영속성 → add/list/category → search/update/delete 
 
 ## 설계 인계
 실제로 비교한 자료는 GitHub 파일과 폴더 구조이며, 로컬 WSL 상태 및 사용자 실습 기록은 아직 점검하지 않았다. 03단계는 이 사실을 전제로 진행한다.
+
+## 파일·함수 수준 기존 참조 분석(실제 GitHub 읽기, 실행 아님)
+- 과거 `reference/budget_app/repositories.py`의 `TransactionRepository.iter_latest()`는 `iter_jsonl_reverse(self.path)`로 파일을 뒤에서 읽는다. 거래 날짜를 자동 비교·정렬하는 동작은 이 함수만으로 보장되지 않는다.
+- 과거 `reference/budget_app/services.py`의 `list_transactions`·`search_transactions`는 `iter_latest`를 반복한다. 새 Round에서는 **날짜가 뒤섞여 추가되는 반례**를 03-6 시험에 반드시 포함한다.
+- 기존 `reference/tests/test_budget_app.py`의 대표 거래 추가는 2026-08-01 → 08-02 → 08-03으로 날짜와 입력 순서가 같다. 해당 테스트만으로 비순차 날짜 입력의 최신순을 입증할 수 없다.
+- 과거 `TransactionRepository.next_id()`는 현재 거래에서 가장 큰 TX 숫자에 1을 더한다. 최대 ID 거래를 삭제하면 다음 실행에서 예전 ID를 다시 사용할 가능성을 새 Round의 ID 설계 위험으로 관리한다.
+- 과거 Reference는 변경하지 않는다. 위 분석은 **정적 코드 읽기의 결론**이지 신규 구현의 실제 런타임 시험 결과가 아니다.
+
+## 추가 위험 등록
+| ID | 실제 위험 | 설계 대응 |
+|---|---|---|
+| GAP-07 | 비순차 날짜 입력에서 역방향 읽기를 최신 거래 날짜순으로 오인 | 정렬된 거래 JSONL·T-ORDER-EDGE |
+| GAP-08 | 거래 최대 번호 삭제 이후 ID 재발급/충돌 가능성 | 별도 불변 ID 정책·재시작 시험 |
+| GAP-09 | 외부 export와 내부 --data-dir 정책 충돌 | 파일 종류·출력 경로 분리 |
+| GAP-10 | 기존 테스트가 정렬 반례를 포함하지 않음 | 테스트 경계/회귀 신규 작성 |

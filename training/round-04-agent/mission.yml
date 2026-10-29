@@ -35,3 +35,7 @@ learning_system_standard: https://github.com/MetaStudy999/codyssey-basic/blob/ma
 documentation_scope: "stage-00-to-03"
 documentation_gate: "DOC_STATIC_PASS"
 documentation_verified_basis: "GitHub 3-review-and-repair; runtime not executed"
+
+design_review_version: "v1.1"
+design_content_gate: "DOC_CONTENT_REVIEW_PASS"
+design_hardening_scope: "stages 00-03; no source changes"

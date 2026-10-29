@@ -96,7 +96,7 @@ flowchart LR
 | 후속 개발단계 | [01 요구](../01-requirements/README.md) · [02 분석](../02-analysis/README.md) · [03 설계](../03-design/README.md) |
 | 전체 공통 교육 규칙 | [중앙 학습 표준](https://github.com/MetaStudy999/codyssey-basic/blob/main/standards/LEARNER-CENTERED-AI-LEARNING-STANDARD.md) |
 
-**다음 단계:** 01·02 작성된 공식 기준과 과거 분석을 읽고 03 설계 문서를 차례로 검토합니다. 새로운 코드 개발·실행은 아직 승인되지 않았습니다.
+**다음 단계:** [01 요구·평가](../01-requirements/README.md) → [02 기존 분석](../02-analysis/README.md) → [03 설계](../03-design/README.md) 순서로 읽습니다. 2026-10-30 기술 설계 보완은 [내용 QA](../05-tests/DESIGN-CONTENT-REVIEW.md)를 참조하세요. 실제 신규 코드·런타임은 미착수입니다. 새로운 코드 개발·실행은 아직 승인되지 않았습니다.
 
 ---
 
