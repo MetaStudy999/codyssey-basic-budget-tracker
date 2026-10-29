@@ -1,17 +1,8 @@
-# B2-1 — 발표
+# B2-1 — 08단계 발표·학습자료
 
-실제 증빙 기반의 PPTX/PDF 발표자료를 작성합니다. AI 연출과 실제 실행 캡처 구분.
+[4종 PPTX/PDF 실제 제작 인덱스](DELIVERABLES-INDEX.md)를 확인하세요.
 
-## Round 04 Agent 승인된 4종 구성
-
-- [발표용 16장](01-main-presentation/README.md)
-- [학습용 45장](02-learning-deck/README.md)
-- [기술 심화 부록 15~25장](03-technical-appendix/README.md)
-- [핵심 복습 1~2장](04-quick-review/README.md)
-- [공통 시각·증빙 원본](05-assets/README.md)
-
-[00단계 제작 계획](../00-plan/SLIDE-PACKAGE-PLAN.md) · **PLAN_ONLY / FILES_NOT_CREATED**
-
-## 학습 활동 확장
-
-[용어·개념도·코드 추적·실습·디버깅·문제은행·복습](06-learning-activities/README.md). **4종 슬라이드 목표는 그대로 유지**, 실제 자료는 미작성.
+- 발표 16장 / 학습 45장 / 기술 심화 18장 / 핵심 복습 2장.
+- 실제 생성 파일은 현재 ChatGPT 대화에서 다운로드 가능하며, GitHub 08 경로에 바이너리 직접 보관은 아직 미완료입니다.
+- [공식 요구·평가 연결](../01-requirements/README.md) · [실제 CI 증빙](../06-evidence/README.md)
+- AI 설명/설계 이미지와 실제 Runtime/Evidence를 구분. WSL2와 독립 발표 시연은 NOT_VERIFIED.
