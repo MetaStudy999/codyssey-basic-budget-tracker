@@ -20,7 +20,7 @@
 ## 소스·증빙
 - 정식 저장소: https://github.com/MetaStudy999/codyssey-basic-budget-tracker
 - 신규 코드: `training/round-04-agent/04-src/`
-- PR: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/pull/9
+- PR: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/pull/9 (병합 완료)
 - 최종 3차 CI 실행: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/40961200893
 - 검증된 소스 HEAD(추가 문서 변경 전): `024e59bb719f9b1d0c266399780d2ccee960d716`
 - [실제 시험 설명](../05-tests/RUNTIME-TEST-RESULTS.md), [Evidence](../06-evidence/GITHUB-ACTIONS-EVIDENCE.md), [평가 준비](../07-evaluation/EVALUATION-READY.md), [발표 자료 목록](../08-presentation/DELIVERABLES-INDEX.md).
@@ -53,3 +53,8 @@ Agent Codyssey `run_command`는 짧은 `pwd` 호출까지 `INVALID_ARGUMENT`로 
 
 ## 범위·보안
 기존 archive R01/R02는 변경하지 않으며, 파일 기반 CLI에 클라우드 배포를 공식 필수로 추가하지 않습니다. 실제 비밀번호/API 키·사용자 거래 데이터를 채팅/Repository/Evidence에 기록하지 않습니다.
+
+## main 병합 후 CI 재검증 추가
+- main 머지 SHA: `5d62bd97a1c54a642ed0c9dc11455eed761ec718`.
+- main CI 실행: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/40962189408 — Python3.10/3.12 각각 21/21 PASS.
+- 원본 `.gitignore`에는 개인 가계부 데이터 패턴이 없었으므로 이번 후속 PR에서 04-src/data와 거래 JSONL, 출력 CSV 기본 이름을 제외하도록 보완했습니다.

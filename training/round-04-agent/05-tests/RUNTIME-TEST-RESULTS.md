@@ -32,3 +32,10 @@
 ## 다음 확인
 - WSL2 재연결 후 동일 커밋으로 사용자 환경 독립 재실행, 실제 CLI 시연, 증빙 기록.
 - PR #9 병합 후 main SHA로 CI/문서 연결을 다시 확인.
+
+## 4차 — PR #9 main 병합 이후 재시험
+- merge SHA: `5d62bd97a1c54a642ed0c9dc11455eed761ec718`.
+- 실제 run: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/40962189408
+- Python3.10 Job `123757580996`: Ran 21 tests, OK, success.
+- Python3.12 Job `123757580482`: Ran 21 tests, OK, success.
+- **결론:** 최종 main에 반영된 코드도 GitHub Ubuntu CI에서 각각 21/21 PASS. WSL2와 공식 동료평가 상태는 별도 NOT_VERIFIED.
