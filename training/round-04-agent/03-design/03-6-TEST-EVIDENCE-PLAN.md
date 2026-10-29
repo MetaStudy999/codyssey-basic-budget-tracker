@@ -1,51 +1,62 @@
-# B2-1 03-6 — 시험 ID·입력·예상 결과·증빙 계획 V1.0
+# B2-1 03-6 — 재현 가능한 시험·증빙 계획 V1.1
 
-> 아래 T-ID는 내부 검증계획이지 실제 수행 PASS가 아님. 05에서 검사와 동시에 06 Evidence를 작성하며 예상과 실제를 분리 기록한다.
+> **모든 결과는 기대값(미실행)**. 공식 B2-1 PDF 4~8쪽, 내부 REQ-01~23 / 평가 E1~E4 기준. T-ID는 내부 식별자. 04 구현 승인 전 명령을 실행하지 않는다.
 
-## 시험 목록
-| 테스트 ID | 요구 ID | 입력/상황 | 예상 결과 | 실제 증거(미실행) |
-|---|---|---|---|---|
-| T-CMD | 01 | 루트/각 하위 --help | 도움말·0 종료 | NOT_VERIFIED |
-| T-MODEL | 02 | 거래 필드·날짜·금액 | dataclass/정확한 타입 | NOT_VERIFIED |
-| T-ARCH | 03,21,23 | 코드/의존성 정적 검사 | 2클래스·3모듈·type hint·stdlib | NOT_VERIFIED |
-| T-VAL | 04 | 잘못된 날짜/0·음수/type/category | 사유+힌트·비0 | NOT_VERIFIED |
-| T-PERSIST | 05 | add/category/budget 후 종료·재시작 | 3파일 저장·동일 데이터 재조회 | NOT_VERIFIED |
-| T-DATADIR | 06 | --data-dir 임시폴더 | 그 위치의 3파일만 생성 | NOT_VERIFIED |
-| T-INIT | 07 | 파일 없는 새 경로 | 자동 초기화 또는 안내 | NOT_VERIFIED |
-| T-ADD | 08 | 정상 수입·지출 입력 | id 출력·거래 재조회 | NOT_VERIFIED |
-| T-LIST | 09 | 다른 날짜 거래·--limit 2 | 최신순 2개, generator | NOT_VERIFIED |
-| T-UPDATE | 10,12 | --id 수정, 재시작 | 선택 필드 변경·나머지 보존 | NOT_VERIFIED |
-| T-DELETE | 11,12 | 존재/없는 ID 삭제 | 삭제/정상 오류 분리 | NOT_VERIFIED |
-| T-ATOMIC | 12 | 안전 재작성+임시파일 확인 | 최종 파일 유효·데이터 보전 | NOT_VERIFIED |
-| T-SEARCH | 13 | 기간/카테고리/type/q/tag 조합 | 최신순 AND 필터·generator | NOT_VERIFIED |
-| T-SUMMARY | 14 | 수입·지출·빈 월 | 정확한 총액/잔액/TOP·자료없음 | NOT_VERIFIED |
-| T-BUDGET | 15 | 예산 초과→summary | 비율·경고·재실행 보존 | NOT_VERIFIED |
-| T-CATEGORY | 16 | add/list/remove + 사용중 제거 | 카테고리 목록·안전한 삭제 거절 | NOT_VERIFIED |
-| T-CSV | 17 | 정상+불량 행 import, 조건 export | 처리/건너뜀 건수·사유 | NOT_VERIFIED |
-| T-CSV-SCHEMA | 18 | UTF-8 헤더/컬럼 검사 | 공식 6열 스키마 | NOT_VERIFIED |
-| T-DECORATOR | 19 | 데코레이터 감싼 명령 | 실제 공통 동작 확인 | NOT_VERIFIED |
-| T-ERROR | 20 | 오류 유발 | traceback 대신 힌트, 비0 | NOT_VERIFIED |
-| T-TYPES | 21 | 함수 시그니처 검사 | 타입 힌트+설명 | NOT_VERIFIED |
-| T-README | 22 | README 문서 검토 | 실행·저장·명령·CSV 명시 | NOT_VERIFIED |
-| T-STD-LIB | 23 | import 목록/버전 | Python3.10+ stdlib only | NOT_VERIFIED |
+## 요구사항 시험 추적(예상)
+| T-ID | REQ | 입력/시나리오 | 기대 결과(설계) |
+|---|---|---|---|
+| T-CMD | 01 | `python -m budget_app --help`, 각 하위 `--help` | 사용 예시 출력·exit 0 |
+| T-MODEL | 02 | 필수 거래 필드 생성 | id/type/date/amount/category/memo/tags 확인 |
+| T-ARCH | 03,21,23 | 파일 구조·시그니처·import 검사 | 2클래스·3모듈·타입힌트·Python3.10+·표준 라이브러리 |
+| T-VAL | 04 | `2026-02-30`, `0`, `-10`, 알 수 없는 type/category | 사유+힌트, 오류 exit 비0 |
+| T-PERSIST | 05 | 거래·분류·예산 저장→종료→재실행 | 3종 JSONL 파일·값 재조회 |
+| T-DATADIR | 06 | `--data-dir` 임시 폴더 | 지정 폴더에만 3종 내부 파일 |
+| T-INIT | 07 | 빈 데이터 폴더 첫 실행 | 초기화 또는 선행 분류 안내 |
+| T-ADD | 08 | 유효 거래 추가 1건 | 생성된 고유 ID 출력, 저장 |
+| T-LIST | 09 | 날짜 10/30 먼저·10/01 나중 입력, limit=2 | **10/30 → 10/01**, 실제 generator |
+| T-UPDATE | 10,12 | 거래 날짜/금액 수정, 재조회 | ID 유지·필드 변경·정렬 위치 갱신·재시작 보존 |
+| T-DELETE | 11,12 | 존재 ID 삭제→없는 ID 삭제 | 첫 삭제 성공, 없는 ID는 원본 불변·비0 |
+| T-ATOMIC | 12 | 정상 교체·실패 주입·임시 파일 검사 | 정상 파일 유지, 중단 시 원본 보존/정리 |
+| T-SEARCH | 13 | 날짜 역순 삽입+기간/type/category/q/tag 조건 | AND 조건 일치, **날짜 최신순**, generator |
+| T-SUMMARY | 14 | 수입 100000, 지출 30000 동일 월 | 잔액 **70000**, 카테고리별 합계·TOP |
+| T-BUDGET | 15 | 예산 20000, 지출 30000 | 사용률 **150%**, 초과 경고, 재실행 유지 |
+| T-CATEGORY | 16 | category add/list/remove, 사용중 분류 제거 | 사용중 삭제 거부, 원본 유지 |
+| T-CSV | 17 | 정상2+잘못된 날짜1행 import | imported=2, skipped=1, 원인·행번호, **exit=2 설계** |
+| T-CSV-SCHEMA | 18 | `date,type,category,amount,memo,tags` + UTF-8 | 정확한 헤더, 인용부호/쉼표 정상 왕복 |
+| T-DECORATOR | 19 | 실제 사용된 데코레이터 동작 | 공통 처리·오류 처리와 원함수의 연결 |
+| T-ERROR | 20 | 없는 ID/잘못된 CSV/쓰기 권한 거부 | traceback 미노출·힌트·비0 |
+| T-TYPES | 21 | 모델/함수 반환형 설명 | 타입 힌트와 실제 입력·출력 계약 일치 |
+| T-README | 22 | README 원문 검토 | 실행/경로/저장형식/명령/CSV 스키마 |
+| T-STD-LIB | 23 | 외부 패키지 import·Python 버전 확인 | 3.10+, 표준 라이브러리만 |
 
-## 05/06 시험 기록 형식
-T-ID / REQ-ID / 기준 PDF쪽 / Git SHA / OS·Python버전 / 실행시간(서울) / 사용 명령 / 입력(가상 데이터) / 기대값 / 실제 stdout·stderr·exit code / 비교 PASS·FAIL / Evidence 파일경로·SHA / 수행자 / 수정·재검증.
+## 추가 경계·회귀(설계 제안)
+- T-ORDER-EDGE: 날짜가 뒤섞인 입력, 같은 날짜의 서로 다른 ID, 수정으로 날짜를 변경, import 후 목록/검색 순서 확인.
+- T-CSV-PARTIAL: 불량행 일부 반영의 비0 종료, 헤더 불량 때 0건 반영, 재시도 중복·중단 시 처리 범위 확인.
+- T-DATA-SAFETY: `--out`이 내부 JSONL과 충돌할 때 거부, 지정된 외부 CSV 출력은 허용, 원본 데이터 유지.
+- T-EMPTY: 빈 월 '데이터 없음', 예산은 존재하지만 거래가 없는 월.
+- T-SCALE-DESIGN: 10만 건 처리의 재작성 비용/대안 **설명 평가**; 공식 성능 숫자 PASS로 사용하지 않는다.
 
-## 검증 실행 순서(개발 승인 후)
-Preflight: 현재 브랜치/경로·Python 3.10+·데이터 폴더와 권한 확인 → 정적 파싱·도움말 → 단위 시험 → CLI 정상 흐름 → 오류/경계 → 프로세스 종료·재시작·3파일 복원 → CSV·개별 재검증 → 평가 설명. 원본 데이터와 충돌하지 않도록 테스트 전용 임시 디렉터리 사용.
-
-## 입력·출력의 엄격한 구분
+## 05 테스트 수행 순간 06 증빙 기록
 ~~~text
-EDUCATIONAL_EXAMPLE / NOT_EXECUTED
-입력: 2026-10-01 expense food 5000
-예상: 생성된 거래 id가 나오고 파일에 저장
-실제: (현재 없음)
+TEST_ID:
+REQ_ID / E_ID:
+source Git SHA / 실행 위치 / Python 버전 / KST 시간:
+입력 데이터(가상):
+실행 명령:
+EXPECTED (사전 기록):
+ACTUAL stdout / stderr / exit code:
+PASS|FAIL|NOT_VERIFIED / 불일치 원인:
+Evidence 파일 위치 및 SHA:
+재시험 기록 및 최종 결론:
 ~~~
-기술 보조 그림을 실제 실행 캡처로 제출하지 않는다.
+테스트용 `--data-dir`와 `--out`은 분리하고 사용자의 실제 가계부 파일을 절대 사용하지 않는다.
 
-## V0.1→위험 검토→V1.0
-V0.1: 정상 add/list만 테스트. P16 재시작 영속성 누락 → T-PERSIST, P17 기능·평가 연결 약함 → REQ 23개 전수, P18 오류 종료·실제 SHA 누락 → T-ERROR/기록 형식, P19 비밀정보 노출 → 가상 데이터. V1.0: 기능·구조·오류·증거 전수 매핑.
+## 3회 검토 이력 및 결론
+- V0.1: 정상 add/list 위주 시험.
+- P16 3파일 재실행, P17 요구별 연결, P18 종료 코드, P19 가상 증빙을 반영.
+- **P34 [높음]** 정렬 반례 누락 → T-ORDER-EDGE.
+- **P35 [높음]** CSV 부분 성공·종료코드와 덮어쓰기 경계 누락 → T-CSV-PARTIAL / T-DATA-SAFETY.
+- **P36 [중간]** 정적 PASS와 실제 결과 혼동 → EXPECTED/ACTUAL 분리.
+- V1.1: 요구 ID 23개 모두 T-ID와 연결, 경계시험 추가. **실제 RUNTIME, EVIDENCE는 NOT_VERIFIED**.
 
-## 상태/인계
-시험 설계(DOC), 실제 실행(RUNTIME), 증빙(EVIDENCE)의 상태를 개별 보존. 05 시험을 시작하는 사용자 승인 미획득. 다음 [03-7](LEARNING-DESIGN.md).
+[01 요구 추적](../01-requirements/REQUIREMENT-TRACEABILITY.md) · [03-8 통합 QA](03-8-INTEGRATED-REVIEW.md).

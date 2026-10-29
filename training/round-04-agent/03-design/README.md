@@ -24,7 +24,9 @@ Python 가계부가 **명령 입력 → 유효성 검사 → 비즈니스 규칙
 | 03-7 | [학습 설계(기존 파일 재사용)](LEARNING-DESIGN.md) | L1~L5/QG | DOC_STATIC_PASS (설계 문서) |
 | 03-8 | [종합 독립 검토·04 인계](03-8-INTEGRATED-REVIEW.md) | 문서 QA | DOC_STATIC_PASS (설계 문서) |
 
-실제 3회 점검 결과는 [문서 QA 보고서](../05-tests/DOCUMENT-QA-ROUND04.md)에서 확인한다.
+기존 문서 정적 3회 점검은 [기존 QA 보고서](../05-tests/DOCUMENT-QA-ROUND04.md)를 참조한다. 이번 기술 설계 보완은 [추가 설계 내용 QA](../05-tests/DESIGN-CONTENT-REVIEW.md)에서 별도로 검증한다.
+
+- [03-1~03-8 실제 재사용 프롬프트 V0.1→위험 검토→V1.1](DESIGN-PROMPTS-AND-REVIEWS.md)
 
 ## 모든 세부 단계의 7단계 공통 절차
 공식 근거/실제 HEAD 확인 → 기획 프롬프트 V0.1 → 누락·위험 ID 확인 → 최종 V1.0 → 입문자용 설명(용어·비유·Mermaid·종이 실습) → GitHub 독립 정적 QA → 문서 판정·다음 단계 인계.

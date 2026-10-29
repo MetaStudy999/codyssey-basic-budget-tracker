@@ -2,7 +2,7 @@
 
 > 아카이브 포함 GitHub 정적 분석 수행. **WSL2 런타임 및 신규 코드 실행은 미실시**.
 
-1. [기존 자산·부족한 요구·위험 분석](LEGACY-GAP-ANALYSIS.md) — archive 위치, 과거 구현과 신규 검증 경계.
+1. [기존 자산·부족한 요구·위험 분석](LEGACY-GAP-ANALYSIS.md) — archive 위치, 과거 코드 함수·테스트의 비순차 날짜 한계·ID 위험 및 신규 검증 경계.
 2. [사전 역량 진단 설계](BASELINE-ASSESSMENT.md) — 동등 난이도 사전/사후 문제, 힌트·독립성 기록.
 3. [03-1~03-8 설계](../03-design/README.md) — 실제 설계 출발점.
 

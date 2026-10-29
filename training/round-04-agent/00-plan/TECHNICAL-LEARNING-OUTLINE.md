@@ -71,3 +71,19 @@ flowchart TD
 **확인 질문:** 책을 덮고 핵심 용어를 자기 말로 말할 수 있는가? 위 입력→처리→예상 결과를 종이에 다시 그릴 수 있는가?
 
 **판정 주의:** 종이 재현과 기대 결과는 교육용이고, 코드 구현·실행·학습자의 독립 숙달 L4~L5는 아직 NOT_VERIFIED 또는 NOT_STARTED입니다. [00단계 시작으로 돌아가기](README.md).
+
+## B2-1 필수 기술 추가 — 한글·영어·통용 약어
+| 용어 | 쉬운 정의 | 미션 적용 |
+|---|---|---|
+| 명령줄 인터페이스(Command-Line Interface, CLI) | 터미널에서 명령과 옵션으로 실행 | add/list/search 명령 |
+| 거래 데이터 클래스(Data Class) | 거래 필드를 하나의 자료 형태로 묶음 | id/date/type/amount 등 |
+| 제너레이터(Generator)와 yield | 필요한 항목을 하나씩 꺼냄 | list/search의 파일 스트리밍 |
+| 데코레이터(Decorator) | 함수 밖에서 공통 동작을 감싸 적용 | 예상 오류 처리·실행 로그 |
+| 타입 힌트(Type Hint) | 입력과 출력의 예상 자료형 명시 | 함수 인자·반환값 계약 |
+| JSONL(JSON Lines) | 한 줄에 JSON 객체 하나를 기록 | 거래·분류·예산 영구 저장 |
+| CSV(Comma-Separated Values) | 쉼표 열 기반 교환 파일 | import/export |
+| 안전한 교체(Atomic Replace) | 임시 파일을 준비한 뒤 한 번에 경로 교체 | update/delete 및 정렬 유지 |
+
+**비유의 한계:** 리스트를 거꾸로 읽는 것만으로 거래 날짜 내림차순이 되지는 않는다. 입력 날짜가 순서대로 기록되었다는 보장이 없기 때문이다. 날짜 기준 최신순을 지키려면 파일 자체를 정렬 상태로 유지하거나 외부 정렬을 적용해야 한다(03-3/03-4 설계).
+
+**단계별 출처:** [요구사항](../01-requirements/REQUIREMENT-TRACEABILITY.md), [데이터 구조](../03-design/03-3-ARCHITECTURE.md), [흐름](../03-design/03-4-DATA-CONTROL-FLOW.md), [검증](../03-design/03-6-TEST-EVIDENCE-PLAN.md). 실제 실행 근거는 아직 없다.
