@@ -33,6 +33,8 @@
 - T-ORDER-EDGE: 날짜가 뒤섞인 입력, 같은 날짜의 서로 다른 ID, 수정으로 날짜를 변경, import 후 목록/검색 순서 확인.
 - T-CSV-PARTIAL: 불량행 일부 반영의 비0 종료, 헤더 불량 때 0건 반영, 재시도 중복·중단 시 처리 범위 확인.
 - T-DATA-SAFETY: `--out`이 내부 JSONL과 충돌할 때 거부, 지정된 외부 CSV 출력은 허용, 원본 데이터 유지.
+- T-EXPORT-OVERWRITE: CSV 대상 파일이 이미 존재하면 기본 거부, 명시적 `--overwrite`에서만 저장; 기존 내부 파일은 변경하지 않음.
+- T-ID-EDGE: 거래 ID 중복 확인, 거래 삭제 후 신규 거래 생성, 날짜 수정 후 ID 불변 확인.
 - T-EMPTY: 빈 월 '데이터 없음', 예산은 존재하지만 거래가 없는 월.
 - T-SCALE-DESIGN: 10만 건 처리의 재작성 비용/대안 **설명 평가**; 공식 성능 숫자 PASS로 사용하지 않는다.
 
@@ -57,6 +59,7 @@ Evidence 파일 위치 및 SHA:
 - **P34 [높음]** 정렬 반례 누락 → T-ORDER-EDGE.
 - **P35 [높음]** CSV 부분 성공·종료코드와 덮어쓰기 경계 누락 → T-CSV-PARTIAL / T-DATA-SAFETY.
 - **P36 [중간]** 정적 PASS와 실제 결과 혼동 → EXPECTED/ACTUAL 분리.
+- **P37 [높음]** 최대 ID 삭제 후 재생성·덮어쓰기 위험 → T-ID-EDGE/T-EXPORT-OVERWRITE 추가.
 - V1.1: 요구 ID 23개 모두 T-ID와 연결, 경계시험 추가. **실제 RUNTIME, EVIDENCE는 NOT_VERIFIED**.
 
 [01 요구 추적](../01-requirements/REQUIREMENT-TRACEABILITY.md) · [03-8 통합 QA](03-8-INTEGRATED-REVIEW.md).

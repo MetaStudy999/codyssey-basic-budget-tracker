@@ -15,7 +15,7 @@ Python 가계부가 **명령 입력 → 유효성 검사 → 비즈니스 규칙
 ## 03-1~03-8 독립 문서·인계
 | 세부 단계 | 직접 열기 | 평가 연결 | 문서 작성 상태 |
 |---|---|---|---|
-| 03-1 | [공식 요구·CORE/BONUS·수용 기준](03-1-REQUIREMENTS-SCOPE.md) | E1~E4 | DOC_STATIC_PASS (설계 문서) |
+| 03-1 | [공식 요구·CORE/BONUS·수용 기준](03-1-REQUIREMENTS-SCOPE.md) | E1~E4 | DOC_STATIC_PASS · 내용 재검토 V1.1 |
 | 03-2 | [CLI 입력·출력·명령·도움말](03-2-CLI-FLOW.md) | E1 | DOC_STATIC_PASS (설계 문서) |
 | 03-3 | [모델·클래스·저장구조](03-3-ARCHITECTURE.md) | E2/E4 | DOC_STATIC_PASS (설계 문서) |
 | 03-4 | [이벤트·데이터·상태 흐름](03-4-DATA-CONTROL-FLOW.md) | E1/E3 | DOC_STATIC_PASS (설계 문서) |
@@ -24,7 +24,7 @@ Python 가계부가 **명령 입력 → 유효성 검사 → 비즈니스 규칙
 | 03-7 | [학습 설계(기존 파일 재사용)](LEARNING-DESIGN.md) | L1~L5/QG | DOC_STATIC_PASS (설계 문서) |
 | 03-8 | [종합 독립 검토·04 인계](03-8-INTEGRATED-REVIEW.md) | 문서 QA | DOC_STATIC_PASS (설계 문서) |
 
-기존 문서 정적 3회 점검은 [기존 QA 보고서](../05-tests/DOCUMENT-QA-ROUND04.md)를 참조한다. 이번 기술 설계 보완은 [추가 설계 내용 QA](../05-tests/DESIGN-CONTENT-REVIEW.md)에서 별도로 검증한다.
+기존 문서 정적 3회 점검은 [기존 QA 보고서](../05-tests/DOCUMENT-QA-ROUND04.md)를 참조한다. 이번 기술 설계 보완 결과는 [추가 설계 내용 QA](../05-tests/DESIGN-CONTENT-REVIEW.md)에서 별도로 검증한다. 문서 적합성 판정과 실행 PASS를 구분한다.
 
 - [03-1~03-8 실제 재사용 프롬프트 V0.1→위험 검토→V1.1](DESIGN-PROMPTS-AND-REVIEWS.md)
 
