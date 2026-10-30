@@ -1,0 +1,37 @@
+Actual final unittest execution UTC: 2026-10-30T09:22:06.895568+00:00
+Command: PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p test_*.py -v
+test_bad_header_import_writes_nothing (test_budget.BudgetMissionTests.test_bad_header_import_writes_nothing) ... ok
+test_category_in_use_protected (test_budget.BudgetMissionTests.test_category_in_use_protected) ... ok
+test_cli_help_error_and_decorator (test_budget.BudgetMissionTests.test_cli_help_error_and_decorator) ... ok
+test_cli_interactive_add (test_budget.BudgetMissionTests.test_cli_interactive_add) ... ok
+test_csv_export_header_and_overwrite (test_budget.BudgetMissionTests.test_csv_export_header_and_overwrite) ... ok
+test_import_partial_and_exit_code (test_budget.BudgetMissionTests.test_import_partial_and_exit_code) ... ok
+test_missing_id_leaves_original (test_budget.BudgetMissionTests.test_missing_id_leaves_original) ... ok
+test_out_of_order_input_still_lists_latest_date_first (test_budget.BudgetMissionTests.test_out_of_order_input_still_lists_latest_date_first) ... ok
+test_search_all_filters (test_budget.BudgetMissionTests.test_search_all_filters) ... ok
+test_summary_and_budget (test_budget.BudgetMissionTests.test_summary_and_budget) ... ok
+test_three_files_and_persistence (test_budget.BudgetMissionTests.test_three_files_and_persistence) ... ok
+test_update_date_reorders_and_keeps_id (test_budget.BudgetMissionTests.test_update_date_reorders_and_keeps_id) ... ok
+test_validation (test_budget.BudgetMissionTests.test_validation) ... ok
+test_atomic_replace_failure_keeps_old_transactions (test_edges.EdgeTests.test_atomic_replace_failure_keeps_old_transactions) ... ok
+test_cli_missing_id_error_code_and_hint (test_edges.EdgeTests.test_cli_missing_id_error_code_and_hint) ... ok
+test_cli_subcommand_helps (test_edges.EdgeTests.test_cli_subcommand_helps) ... ok
+test_corrupt_jsonl_has_explanation (test_edges.EdgeTests.test_corrupt_jsonl_has_explanation) ... ok
+test_corrupt_persisted_field_type_is_rejected (test_edges.EdgeTests.test_corrupt_persisted_field_type_is_rejected) ... ok
+test_export_date_range_and_no_period_is_error (test_edges.EdgeTests.test_export_date_range_and_no_period_is_error) ... ok
+test_no_account_key_or_password_is_needed (test_edges.EdgeTests.test_no_account_key_or_password_is_needed) ... ok
+test_same_date_stable_order (test_edges.EdgeTests.test_same_date_stable_order) ... ok
+test_argument_errors_have_hint_and_do_not_mutate (test_runtime_regressions.RuntimeRegressionTests.test_argument_errors_have_hint_and_do_not_mutate) ... ok
+test_corrupt_budget_schema_is_friendly_and_preserved (test_runtime_regressions.RuntimeRegressionTests.test_corrupt_budget_schema_is_friendly_and_preserved) ... ok
+test_corrupt_category_schema_is_friendly_and_preserved (test_runtime_regressions.RuntimeRegressionTests.test_corrupt_category_schema_is_friendly_and_preserved) ... ok
+test_eof_during_add_preserves_all_files (test_runtime_regressions.RuntimeRegressionTests.test_eof_during_add_preserves_all_files) ... ok
+test_export_replace_failure_preserves_existing_output (test_runtime_regressions.RuntimeRegressionTests.test_export_replace_failure_preserves_existing_output) ... ok
+test_import_save_failure_preserves_all_files (test_runtime_regressions.RuntimeRegressionTests.test_import_save_failure_preserves_all_files) ... ok
+test_keyboard_interrupt_preserves_all_files (test_runtime_regressions.RuntimeRegressionTests.test_keyboard_interrupt_preserves_all_files) ... ok
+test_partial_import_reports_hint_for_bad_row (test_runtime_regressions.RuntimeRegressionTests.test_partial_import_reports_hint_for_bad_row) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 1.004s
+
+OK
+exit=0

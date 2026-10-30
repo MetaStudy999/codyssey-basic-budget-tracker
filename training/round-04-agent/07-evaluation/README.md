@@ -1,5 +1,5 @@
 # B2-1 — 07단계 평가 준비
 
-[공식 평가 4영역·10초/30초/1분 설명·실제 시연 체크](EVALUATION-READY.md) 참고.
+[평가 4영역·설명 가이드](EVALUATION-READY.md)와 [현재 요구별 독립 감사](../05-tests/WSL2-INDEPENDENT-VERIFICATION.md)를 확인하세요.
 
-**CI 런타임 시험은 PASS**, WSL2·사용자의 독립 설명 및 공식 동료평가 결과는 **NOT_VERIFIED**. 미션 CLEAR로 선언하지 않습니다.
+현재 agent의 WSL2 29/29 unittest·61회 CLI는 PASS입니다. 사용자 직접 입력·구술 설명·학습 숙달·공식 동료평가는 NOT_VERIFIED입니다. CLEAR를 선언하지 않습니다.

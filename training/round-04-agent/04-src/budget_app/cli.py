@@ -19,6 +19,10 @@ def safe_cli(func: Callable[..., int]) -> Callable[..., int]:
             print("[오류] " + error.reason, file=sys.stderr)
             print("[힌트] " + error.hint, file=sys.stderr)
             return 2
+        except (EOFError, KeyboardInterrupt):
+            print("[오류] 입력이 중단되었습니다.", file=sys.stderr)
+            print("[힌트] 명령을 다시 실행하고 입력을 완료하세요.", file=sys.stderr)
+            return 2
         except (OSError, UnicodeError) as error:
             print("[오류] 파일 입출력을 완료할 수 없습니다.", file=sys.stderr)
             print("[힌트] 입력 경로, 인코딩, 읽기/쓰기 권한을 확인하세요.", file=sys.stderr)
@@ -26,8 +30,13 @@ def safe_cli(func: Callable[..., int]) -> Callable[..., int]:
     return wrapped
 
 
+class HelpfulParser(argparse.ArgumentParser):
+    def error(self, message: str) -> None:
+        super().error(message + "\n[힌트] 해당 명령의 --help로 필수 인자와 형식을 확인하세요.")
+
+
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="python -m budget_app", description="B2-1 개인 용돈기입장")
+    parser = HelpfulParser(prog="python -m budget_app", description="B2-1 개인 용돈기입장")
     parser.add_argument("--data-dir", default="./data", help="내부 JSONL 저장 폴더 (명령 앞에 입력)")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("add", help="대화형 거래 추가")

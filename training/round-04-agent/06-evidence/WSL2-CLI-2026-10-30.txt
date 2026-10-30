@@ -1,0 +1,366 @@
+Actual execution UTC: 2026-10-30T09:21:22.939890+00:00
+Platform: Linux 6.18.33.2-microsoft-standard-WSL2 Python 3.12.3
+Base HEAD: 9be11f664b5d32d35364b0e1c0595c2467263d12
+Worktree source SHA256 (includes uncommitted fixes):
+__init__.py 0607cf6b8b148a5fb03d6c0b0343ddb0ba8a0ee4c8264c66d8fd0cee52066dbf
+__main__.py 307299fda7b77d22c64cb51430ec75e5f59d78e9c948786afb3b2544fe45e4b7
+cli.py f86c0e0d9b9589a4515a4b96ef43e6d3a2d5e5b622c1c8176bb130f41e8238b6
+models.py 83748bf920235a1f14d12588d6939d449a6e0a457334133705e45ecc341ae564
+service.py c6753ac55e69644dd2b86aa62dcc8c7d549d736449b39e5e1ed7ee1cf48019fd
+storage.py 600c6ca4fbe3caa1154030e34e9e9215c0bd51fca139372161f14fa51e5650a8
+Synthetic data only: /tmp/b2-round04-runtime-0hsh1ljx
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data --help
+usage: python -m budget_app [-h] [--data-dir DATA_DIR] [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data add --help
+usage: python -m budget_app add [-h] [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data list --help
+usage: python -m budget_app list [-h] [--limit LIMIT] [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data search --help
+usage: python -m budget_app search [-h] [--from DATE_FROM] [--to DATE_TO] [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data update --help
+usage: python -m budget_app update [-h] --id ID [--date DATE] [--type TYPE] [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data delete --help
+usage: python -m budget_app delete [-h] --id ID [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data category --help
+usage: python -m budget_app category [-h] {add,list,remove} ... [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data budget --help
+usage: python -m budget_app budget [-h] {set} ... [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data summary --help
+usage: python -m budget_app summary [-h] --month MONTH [--top TOP] [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data import --help
+usage: python -m budget_app import [-h] --from SOURCE [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data export --help
+usage: python -m budget_app export [-h] --out OUT [--month MONTH] [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data category add --help
+usage: python -m budget_app category add [-h] [--name NAME] [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data category list --help
+usage: python -m budget_app category list [-h] [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data category remove --help
+usage: python -m budget_app category remove [-h] [--name NAME] [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data budget set --help
+usage: python -m budget_app budget set [-h] --month MONTH --amount AMOUNT [remaining help omitted]
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data category list
+- food
+- transport
+- rent
+- salary
+- etc
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data category add
+stdin (synthetic): 'study\n'
+카테고리명: [저장 완료] category=study
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data category add --name unused
+[저장 완료] category=unused
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data category remove --name unused
+[삭제 완료] category=unused
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data add
+stdin (synthetic): '2026-10-30\nexpense\nfood\n1500\n가상 lunch\nmeal,lunch\n'
+날짜(YYYY-MM-DD): 유형(income/expense): 카테고리: 금액(양수 정수): 메모(선택): 태그(쉼표로 구분, 선택): [저장 완료] id=TX-790882c38538455babc450da903d4bb1
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data add
+stdin (synthetic): '2026-10-01\nincome\nsalary\n10000\n가상 income\npay\n'
+날짜(YYYY-MM-DD): 유형(income/expense): 카테고리: 금액(양수 정수): 메모(선택): 태그(쉼표로 구분, 선택): [저장 완료] id=TX-ca1327d524cf4d9da24496bc1857016b
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data add
+stdin (synthetic): '2026-10-15\nexpense\nstudy\n2000\n가상 book\nlearn\n'
+날짜(YYYY-MM-DD): 유형(income/expense): 카테고리: 금액(양수 정수): 메모(선택): 태그(쉼표로 구분, 선택): [저장 완료] id=TX-47c358fab8d94ab6b05df36a689a644c
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data list --limit 2
+TX-790882c38538455babc450da903d4bb1 | 2026-10-30 | expense | food | 1500 | 가상 lunch
+TX-47c358fab8d94ab6b05df36a689a644c | 2026-10-15 | expense | study | 2000 | 가상 book
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data search --from 2026-10-01 --to 2026-10-31 --category food --type expense --q LUNCH --tag meal
+TX-790882c38538455babc450da903d4bb1 | 2026-10-30 | expense | food | 1500 | 가상 lunch
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data update --id TX-ca1327d524cf4d9da24496bc1857016b --date 2026-10-31 --amount 12000 --memo '가상 updated' --tags pay,updated
+[수정 완료] id=TX-ca1327d524cf4d9da24496bc1857016b
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data list --limit 3
+TX-ca1327d524cf4d9da24496bc1857016b | 2026-10-31 | income | salary | 12000 | 가상 updated
+TX-790882c38538455babc450da903d4bb1 | 2026-10-30 | expense | food | 1500 | 가상 lunch
+TX-47c358fab8d94ab6b05df36a689a644c | 2026-10-15 | expense | study | 2000 | 가상 book
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data search --type expense
+TX-790882c38538455babc450da903d4bb1 | 2026-10-30 | expense | food | 1500 | 가상 lunch
+TX-47c358fab8d94ab6b05df36a689a644c | 2026-10-15 | expense | study | 2000 | 가상 book
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data budget set --month 2026-10 --amount 3000
+[저장 완료] 2026-10 예산 3000원
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data summary --month 2026-10 --top 2
+총 수입: 12000원
+총 지출: 3500원
+잔액: 8500원
+예산: 3000원 (사용률 116.67%)
+[경고] 월 예산 초과
+1) study: 2000원
+2) food: 1500원
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data category list
+- food
+- transport
+- rent
+- salary
+- etc
+- study
+exit= 0
+CHECK: restart persistence, three JSONL files, newest order PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data summary --month 2026-09
+해당 월 거래 데이터 없음
+총 수입: 0원
+총 지출: 0원
+잔액: 0원
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data category remove --name study
+stderr: [오류] 사용 중인 카테고리는 삭제할 수 없습니다.
+[힌트] 거래의 카테고리를 먼저 변경하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data update --id MISSING --amount 10
+stderr: [오류] 수정할 거래를 찾지 못했습니다.
+[힌트] list로 거래 ID를 확인하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data delete --id MISSING
+stderr: [오류] 삭제할 거래를 찾지 못했습니다.
+[힌트] list로 거래 ID를 확인하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data add
+stdin (synthetic): '2026-02-30\nexpense\nfood\n1\n\n\n'
+날짜(YYYY-MM-DD): 유형(income/expense): 카테고리: 금액(양수 정수): 메모(선택): 태그(쉼표로 구분, 선택):
+stderr: [오류] 날짜가 올바르지 않습니다.
+[힌트] YYYY-MM-DD 형식으로 입력하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data add
+stdin (synthetic): '2026-10-30\nexpense\nfood\n0\n\n\n'
+날짜(YYYY-MM-DD): 유형(income/expense): 카테고리: 금액(양수 정수): 메모(선택): 태그(쉼표로 구분, 선택):
+stderr: [오류] 금액은 양의 정수여야 합니다.
+[힌트] 1 이상의 정수를 입력하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data add
+stdin (synthetic): '2026-10-30\nexpense\nfood\n-1\n\n\n'
+날짜(YYYY-MM-DD): 유형(income/expense): 카테고리: 금액(양수 정수): 메모(선택): 태그(쉼표로 구분, 선택):
+stderr: [오류] 금액은 양의 정수여야 합니다.
+[힌트] 1 이상의 정수를 입력하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data add
+stdin (synthetic): '2026-10-30\nexpense\nfood\n1.5\n\n\n'
+날짜(YYYY-MM-DD): 유형(income/expense): 카테고리: 금액(양수 정수): 메모(선택): 태그(쉼표로 구분, 선택):
+stderr: [오류] 금액은 양의 정수여야 합니다.
+[힌트] 1 이상의 정수를 입력하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data add
+stdin (synthetic): '2026-10-30\ninvalid\nfood\n1\n\n\n'
+날짜(YYYY-MM-DD): 유형(income/expense): 카테고리: 금액(양수 정수): 메모(선택): 태그(쉼표로 구분, 선택):
+stderr: [오류] 거래 유형이 올바르지 않습니다.
+[힌트] income 또는 expense를 사용하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data add
+stdin (synthetic): '2026-10-30\nexpense\nMISSING\n1\n\n\n'
+날짜(YYYY-MM-DD): 유형(income/expense): 카테고리: 금액(양수 정수): 메모(선택): 태그(쉼표로 구분, 선택):
+stderr: [오류] 등록되지 않은 카테고리입니다: MISSING
+[힌트] category list 또는 category add 명령을 사용하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data add
+stdin (synthetic): '2026-10-30\n'
+날짜(YYYY-MM-DD): 유형(income/expense):
+stderr: [오류] 입력이 중단되었습니다.
+[힌트] 명령을 다시 실행하고 입력을 완료하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data delete
+stderr: usage: python -m budget_app delete [-h] --id ID
+python -m budget_app delete: error: the following arguments are required: --id
+[힌트] 해당 명령의 --help로 필수 인자와 형식을 확인하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data search --from 2026-11-01 --to 2026-10-01
+stderr: [오류] 기간 시작일이 종료일보다 늦습니다.
+[힌트] --from과 --to의 순서를 확인하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data export --out /tmp/b2-round04-runtime-0hsh1ljx/report.csv --month 2026-10
+[완료] /tmp/b2-round04-runtime-0hsh1ljx/report.csv (3 records)
+exit= 0
+ACTUAL CSV UTF-8 contents:
+date,type,category,amount,memo,tags
+2026-10-31,income,salary,12000,가상 updated,"pay,updated"
+2026-10-30,expense,food,1500,가상 lunch,"meal,lunch"
+2026-10-15,expense,study,2000,가상 book,learn
+
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data export --out /tmp/b2-round04-runtime-0hsh1ljx/report.csv --month 2026-10
+stderr: [오류] 내보낼 CSV가 이미 존재합니다.
+[힌트] --overwrite를 지정하거나 새 파일명을 사용하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+CHECK: duplicate output protection (byte comparison) PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data export --out /tmp/b2-round04-runtime-0hsh1ljx/report.csv --month 2026-10 --overwrite
+[완료] /tmp/b2-round04-runtime-0hsh1ljx/report.csv (3 records)
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data export --out /tmp/b2-round04-runtime-0hsh1ljx/range.csv --from 2026-10-15 --to 2026-10-30
+[완료] /tmp/b2-round04-runtime-0hsh1ljx/range.csv (2 records)
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data export --out /tmp/b2-round04-runtime-0hsh1ljx/no-period.csv
+stderr: [오류] 내보낼 기간을 지정해야 합니다.
+[힌트] --month 또는 --from과 --to를 지정하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data export --out /tmp/b2-round04-runtime-0hsh1ljx/data/transactions.jsonl --month 2026-10 --overwrite
+stderr: [오류] 내부 데이터 파일에 CSV를 덮어쓸 수 없습니다.
+[힌트] 다른 --out 경로를 지정하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data export --out /tmp/b2-round04-runtime-0hsh1ljx/data/categories.jsonl --month 2026-10 --overwrite
+stderr: [오류] 내부 데이터 파일에 CSV를 덮어쓸 수 없습니다.
+[힌트] 다른 --out 경로를 지정하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data export --out /tmp/b2-round04-runtime-0hsh1ljx/data/budgets.jsonl --month 2026-10 --overwrite
+stderr: [오류] 내부 데이터 파일에 CSV를 덮어쓸 수 없습니다.
+[힌트] 다른 --out 경로를 지정하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+ACTUAL synthetic import CSV:
+date,type,category,amount,memo,tags
+2026-10-20,expense,food,100,가상 imported,meal
+2026-02-30,expense,food,500,가상 invalid,meal
+2026-10-21,income,salary,200,가상 imported,pay
+
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data import --from /tmp/b2-round04-runtime-0hsh1ljx/mixed.csv
+[완료] imported=2, skipped=1
+[건너뜀] 3행: 날짜가 올바르지 않습니다. [힌트] YYYY-MM-DD 형식으로 입력하세요.
+exit= 2
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data import --from /tmp/b2-round04-runtime-0hsh1ljx/valid.csv
+[완료] imported=1, skipped=0
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data import --from /tmp/b2-round04-runtime-0hsh1ljx/bad.csv
+stderr: [오류] CSV 헤더가 올바르지 않습니다.
+[힌트] date,type,category,amount,memo,tags 순서의 헤더를 사용하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data import --from /tmp/b2-round04-runtime-0hsh1ljx/missing.csv
+stderr: [오류] CSV 파일을 읽을 수 없습니다.
+[힌트] 경로·UTF-8 인코딩·CSV 형식을 확인하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data delete --id TX-47c358fab8d94ab6b05df36a689a644c
+[삭제 완료] id=TX-47c358fab8d94ab6b05df36a689a644c
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data category remove --name study
+[삭제 완료] category=study
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data category list
+- food
+- transport
+- rent
+- salary
+- etc
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data list --limit 20
+TX-930b9156c9274611a1502e49c7c678fa | 2026-11-01 | expense | food | 100 | 가상 valid
+TX-ca1327d524cf4d9da24496bc1857016b | 2026-10-31 | income | salary | 12000 | 가상 updated
+TX-790882c38538455babc450da903d4bb1 | 2026-10-30 | expense | food | 1500 | 가상 lunch
+TX-6c3fdafbd047496b96f3b189d756fb97 | 2026-10-21 | income | salary | 200 | 가상 imported
+TX-7aefbf8626eb40119bcb268d0055e3bd | 2026-10-20 | expense | food | 100 | 가상 imported
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data summary --month 2026-10
+총 수입: 12200원
+총 지출: 1600원
+잔액: 10600원
+예산: 3000원 (사용률 53.33%)
+1) food: 1600원
+exit= 0
+
+$ /usr/bin/python3 -m budget_app --data-dir /tmp/b2-round04-runtime-0hsh1ljx/data list
+stderr: [오류] transactions.jsonl의 1행을 읽을 수 없습니다.
+[힌트] 백업 파일과 JSONL 형식을 확인하세요.
+exit= 2
+CHECK: all three JSONL file contents unchanged PASS
+
+PASS: 61 fresh CLI processes; all assertions passed
+CLEANUP: temporary synthetic data removed: True

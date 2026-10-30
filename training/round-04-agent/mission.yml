@@ -20,7 +20,7 @@ handoff_root: training/round-04-agent/09-handoff
 owner_path_directive: APPROVED_2026-10-25
 owner_mission_development_approval: APPROVED_2026-10-30_USER_NEXT_STEPS
 mission_execution: IN_PROGRESS
-runtime: CI_PASS_WSL2_NOT_VERIFIED
+runtime: WSL2_RUNTIME_PASS
 clear: NOT_VERIFIED
 legacy_rounds: REFERENCE_ONLY
 learning_system_approval: APPROVED_2026-10-26
@@ -34,19 +34,35 @@ learning_system_standard: https://github.com/MetaStudy999/codyssey-basic/blob/ma
 
 documentation_scope: "stage-00-to-03"
 documentation_gate: "DOC_STATIC_PASS"
-documentation_verified_basis: "GitHub 3-review-and-repair; runtime not executed"
+documentation_verified_basis: "GitHub 3-review-and-repair (historical static gate); current runtime evidence below"
 
 design_review_version: "v1.1"
 design_content_gate: "DOC_CONTENT_REVIEW_PASS"
 design_hardening_scope: "stages 00-03; no source changes"
 
 implementation_scope: training/round-04-agent/04-src
-last_ci_verified_sha: 024e59bb719f9b1d0c266399780d2ccee960d716
+last_ci_verified_sha: 5d62bd97a1c54a642ed0c9dc11455eed761ec718
 last_ci_verified_run: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/40962189408
 ci_python_versions: "3.10,3.12"
 ci_tests_per_version: 21
-ci_status: PASS
-wsl2_runtime: NOT_VERIFIED
+last_ci_verified_status: PASS
+ci_status: NOT_VERIFIED_FOR_CURRENT_WORKTREE
+ci_next_verification: RERUN_AFTER_PR
+wsl2_runtime: PASS
+wsl2_agent_status: WSL2_AGENT_PASS
+user_demo_status: USER_DEMO_PENDING
+wsl2_execution_agent: "Codex via Agent Codyssey in user WSL2"
+wsl2_python: "3.12.3"
+wsl2_unittest: PASS_29_OF_29
+wsl2_cli: PASS_61_OF_61_FRESH_PROCESSES
+wsl2_data: TEMPORARY_SYNTHETIC_ONLY
+wsl2_verified_base_sha: 9be11f664b5d32d35364b0e1c0595c2467263d12
+wsl2_verified_source_basis: "Modified worktree; six source SHA256 values in CLI evidence, not the base commit"
+wsl2_runtime_evidence: training/round-04-agent/06-evidence/WSL2-RUNTIME-2026-10-30.md
+wsl2_unittest_evidence: training/round-04-agent/06-evidence/WSL2-UNITTEST-2026-10-30.txt
+wsl2_cli_evidence: training/round-04-agent/06-evidence/WSL2-CLI-2026-10-30.txt
+user_independent_demonstration: NOT_VERIFIED
+user_own_words_explanation: NOT_VERIFIED
 peer_evaluation: NOT_VERIFIED
 slides_local_files: CREATED
 slides_git_repository_archive: NOT_UPLOADED

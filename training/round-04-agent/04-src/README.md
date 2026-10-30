@@ -77,6 +77,7 @@ date,type,category,amount,memo,tags
 
 ## 정상·오류·검증
 
+- 대화형 입력 EOF/중단, 손상된 카테고리·예산 필드, 필수 옵션 누락도 힌트를 출력하고 오류 코드로 종료합니다. 불량 import 행마다 사유와 해결 힌트를 출력합니다.
 - 날짜가 잘못되거나 거래 ID가 없으면 사용자가 이해할 수 있는 `[오류]`, `[힌트]`를 표시합니다. 정상 종료 코드는 0, 오류는 2(비0)입니다.
 - 실제 데이터나 API Key를 GitHub에 올리지 마세요. 테스트에는 가상 거래만 사용합니다.
 - 외부 pip 패키지 설치 불필요. 내장 unittest 실행:
@@ -93,6 +94,8 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_*.py' -
 - `service.py`: 거래·예산·카테고리·CSV 규칙
 - `cli.py`: argparse 명령 및 공통 오류 데코레이터
 - `tests/`: 정상·오류·경계·재시작 회귀 검증
+
+현재 [WSL2 실제 독립 검증](../05-tests/WSL2-INDEPENDENT-VERIFICATION.md): Python 3.12.3에서 unittest 29/29·별도 CLI 61회 PASS. 사용자 직접 시연·동료평가·CLEAR는 미검증입니다.
 
 ## 공식 학습·평가와 증빙
 

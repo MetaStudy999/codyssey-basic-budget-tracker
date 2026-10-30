@@ -1,8 +1,16 @@
-# B2-1 Round 04 — 실제 CI 검증 결과 (2026-10-30)
+# B2-1 Round 04 — WSL2 실제 실행 및 과거 CI 검증 결과 (2026-10-30)
 
-> 자동 시험은 **GitHub Actions의 Ubuntu 러너**에서 실행했으며 사용자 WSL2 환경은 아직 검증하지 못했습니다. 실제 소스 커밋 SHA: `024e59bb719f9b1d0c266399780d2ccee960d716`.
+> **WSL2_RUNTIME_PASS**: 사용자 WSL2에서 Agent Codyssey를 통한 Codex agent 실행으로 Python 3.12.3, unittest **29/29**, 별도 프로세스 CLI **61/61 PASS**. 사용자 직접 독립 시연·자기 말 설명·공식 동료평가 및 **CLEAR=NOT_VERIFIED**. 아래 CI는 당시 커밋의 과거 기록이며 이번 수정 코드의 CI는 PR 후 재실행 전까지 **NOT_VERIFIED**다.
 
-## 3회 반복 실제 실행 기록
+## 현재 WSL2 실제 실행 근거
+
+- 환경: Ubuntu 24.04.4 LTS, `Linux 6.18.33.2-microsoft-standard-WSL2`, Python 3.12.3.
+- 대상: `feature/b2-1-round04-runtime-evidence-20261030`의 수정 작업 트리. 시작 HEAD `9be11f664b5d32d35364b0e1c0595c2467263d12`와 수정 후 소스를 구분한다. CLI 로그의 소스 6개 SHA256을 현재 파일과 교차 확인했다.
+- [런타임 증빙·범위](../06-evidence/WSL2-RUNTIME-2026-10-30.md), [unittest 원본: Ran 29 tests / OK / exit=0](../06-evidence/WSL2-UNITTEST-2026-10-30.txt), [CLI 원본: 61 fresh CLI processes / all assertions passed](../06-evidence/WSL2-CLI-2026-10-30.txt), [독립 검증·요구사항 감사](WSL2-INDEPENDENT-VERIFICATION.md).
+- 임시 디렉터리의 가상 데이터만 사용. 정상 기능, 오류 exit=2·힌트·traceback 없음, 실패 후 파일 보존, 별도 프로세스 재시작 후 거래·분류·예산 JSONL 3종 영속성을 검증했다. CLI 임시 데이터 정리 결과는 `True`다.
+- 기존 21개에 EOF/중단·손상 분류/예산·인자 오류·부분 import·저장 실패 회귀 8개를 추가해 29개가 통과했다. `os.replace` 실패는 unittest에서 주입했으며 실제 디스크 장애 시험은 아니다.
+
+## 과거 CI — 3회 반복 실제 실행 기록
 
 | 회차 | 소스 커밋 | Python | 수행 | 결과 | GitHub Actions |
 |---|---|---|---|---|---|
@@ -25,17 +33,18 @@
 
 ## 이번 환경과 보안
 - **CI 환경:** GitHub-hosted Ubuntu, Python 3.10 및 Python 3.12. 외부 pip 설치 없음; 표준 라이브러리 unittest 사용.
-- **WSL2:** Agent Codyssey `run_command` 요청이 `INVALID_ARGUMENT` 반환, 실제 사용자 WSL2는 `NOT_VERIFIED`. 외부 서버/클라우드 배포 불필요(공식 CLI 미션).
+- **WSL2:** 과거 `run_command`의 `INVALID_ARGUMENT` 장애 기록 이후 현재 사용자 WSL2에서 agent 실실행을 완료했다. 현재 판정은 위 증빙의 **WSL2_RUNTIME_PASS**이며 사용자 직접 시연·자기 말 설명은 **NOT_VERIFIED**다. 외부 서버/클라우드 배포 불필요(공식 CLI 미션).
 - **데이터:** 테스트는 임시 디렉터리와 가상 거래만 사용. 실제 사용자 가계부/비밀번호/API 키 사용하지 않음.
 - **주의:** CI에서의 소스 동작 PASS가 사용자의 학습 숙달 L1~L5나 코디세이 동료평가 CLEAR를 의미하지 않음.
 
-## 다음 확인
-- WSL2 재연결 후 동일 커밋으로 사용자 환경 독립 재실행, 실제 CLI 시연, 증빙 기록.
-- PR #9 병합 후 main SHA로 CI/문서 연결을 다시 확인.
+## 남은 확인
+- 사용자 직접 입력·독립 CLI 시연과 자기 말 설명, 공식 동료평가.
+- 현재 수정 코드의 PR 후 GitHub Actions Python 3.10/3.12 재실행 및 해당 SHA·로그 연결. 현재 수정 버전의 Python 3.10 실실행은 미검증이다.
+- 실제 디스크 고갈·전원 차단·동시 쓰기·10만 건 성능은 이번 검증 범위 밖이다.
 
 ## 4차 — PR #9 main 병합 이후 재시험
 - merge SHA: `5d62bd97a1c54a642ed0c9dc11455eed761ec718`.
 - 실제 run: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/40962189408
 - Python3.10 Job `123757580996`: Ran 21 tests, OK, success.
 - Python3.12 Job `123757580482`: Ran 21 tests, OK, success.
-- **결론:** 최종 main에 반영된 코드도 GitHub Ubuntu CI에서 각각 21/21 PASS. WSL2와 공식 동료평가 상태는 별도 NOT_VERIFIED.
+- **당시 결론:** 위 main SHA는 GitHub Ubuntu CI에서 각각 21/21 PASS. 현재 수정 작업 트리의 WSL2 29/29·CLI 61/61 PASS와 구분하며, 수정 코드 CI·사용자 직접 시연·공식 동료평가는 NOT_VERIFIED다.
