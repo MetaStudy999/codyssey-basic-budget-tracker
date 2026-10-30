@@ -41,13 +41,13 @@ design_content_gate: "DOC_CONTENT_REVIEW_PASS"
 design_hardening_scope: "stages 00-03; no source changes"
 
 implementation_scope: training/round-04-agent/04-src
-last_ci_verified_sha: 5d62bd97a1c54a642ed0c9dc11455eed761ec718
-last_ci_verified_run: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/40962189408
+last_ci_verified_sha: 0208d59823c01eb1f8c9d478c545cd28962da20a
+last_ci_verified_run: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/41037428815
 ci_python_versions: "3.10,3.12"
-ci_tests_per_version: 21
+ci_tests_per_version: 29
 last_ci_verified_status: PASS
-ci_status: NOT_VERIFIED_FOR_CURRENT_WORKTREE
-ci_next_verification: RERUN_AFTER_PR
+ci_status: PR11_HEAD_PASS_PYTHON_3_10_3_12
+ci_next_verification: PR11_RUN_COMPLETED_SUCCESS_MAIN_POSTMERGE_CI_NOT_OBSERVED
 wsl2_runtime: PASS
 wsl2_agent_status: WSL2_AGENT_PASS
 user_demo_status: USER_DEMO_PENDING
@@ -68,6 +68,19 @@ slides_local_files: CREATED
 slides_git_repository_archive: NOT_UPLOADED
 handoff_status: PREPARED
 
-main_merge_sha: 5d62bd97a1c54a642ed0c9dc11455eed761ec718
-main_ci_status: PASS_21_OF_21_PYTHON_3_10_3_12
+main_merge_sha: 1759968dbfe436583967b7c1878fbbc4ffa31014
+main_ci_status: PR11_HEAD_29_OF_29_PASS_MAIN_POSTMERGE_WSL2_29_OF_29_PASS
 security_gitignore_review: DATA_PATHS_EXCLUDED
+
+# 2026-10-30 PR #11 verification and completed GitHub main merge
+pr11_url: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/pull/11
+pr11_head_sha: 0208d59823c01eb1f8c9d478c545cd28962da20a
+pr11_ci_run: https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/41037428815
+pr11_ci_python310: PASS_29_OF_29
+pr11_ci_python312: PASS_29_OF_29
+pr11_ci_cli_smoke: PASS
+main_postmerge_sha: 1759968dbfe436583967b7c1878fbbc4ffa31014
+main_postmerge_wsl2_unittest: PASS_29_OF_29
+main_postmerge_wsl2_cli: PASS_61_OF_61
+main_postmerge_git_worktree: CLEAN
+main_postmerge_ci_run: NOT_OBSERVED
