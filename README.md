@@ -149,3 +149,7 @@ list/search는 generator streaming으로 처리하며, update/delete는 임시 �
 **Round 04 Runtime: WSL2_RUNTIME_PASS / CLEAR: NOT_VERIFIED**
 
 이번 agent 실행 결과와 사용자 직접 시연·설명·동료평가를 구분합니다. 과거 Reference의 CLEAR를 현재 Round에 전용하지 않습니다. 이번 PR 준비는 지정 feature 브랜치 커밋과 일반 push까지 승인되었으며 클라우드 배포는 범위 밖입니다.
+
+## B2-1 동료평가 16문항 상세 해설
+
+[**문항별 답변·Mermaid 흐름도·코드 근거·검증 방법(총 16문항)**](training/round-04-agent/07-evaluation/EVALUATION-QA-MERMAID.md)을 참고하세요. 원본 [평가표](b2-1-evaluation.md)는 그대로 보존합니다. 이 문서는 2026 제2기 B2-1 PDF 요구사항과 Round 04 구현을 연결하는 학습 자료로, 사용자 직접 시연·동료평가·CLEAR 확인을 대신하지 않습니다.
