@@ -1,6 +1,6 @@
 # B2-1 Round 04 — WSL2 실제 실행 및 과거 CI 검증 결과 (2026-10-30)
 
-> **WSL2_RUNTIME_PASS**: 사용자 WSL2에서 Agent Codyssey를 통한 Codex agent 실행으로 Python 3.12.3, unittest **29/29**, 별도 프로세스 CLI **61/61 PASS**. 사용자 직접 독립 시연·자기 말 설명·공식 동료평가 및 **CLEAR=NOT_VERIFIED**. 아래 CI는 당시 커밋의 과거 기록이며 이번 수정 코드의 CI는 PR 후 재실행 전까지 **NOT_VERIFIED**다.
+> **WSL2_RUNTIME_PASS**: 사용자 WSL2에서 Agent Codyssey를 통한 Codex agent 실행으로 Python 3.12.3, unittest **29/29**, 별도 프로세스 CLI **61/61 PASS**. 사용자 직접 독립 시연·자기 말 설명·공식 동료평가 및 **CLEAR=NOT_VERIFIED**. 아래의 이전 CI 기록 외에 PR #11 수정 코드 CI(Python 3.10/3.12 각각 29/29 PASS)와 병합 후 WSL2 검증을 최신 근거로 확인했다.
 
 ## 현재 WSL2 실제 실행 근거
 
@@ -39,7 +39,7 @@
 
 ## 남은 확인
 - 사용자 직접 입력·독립 CLI 시연과 자기 말 설명, 공식 동료평가.
-- 현재 수정 코드의 PR 후 GitHub Actions Python 3.10/3.12 재실행 및 해당 SHA·로그 연결. 현재 수정 버전의 Python 3.10 실실행은 미검증이다.
+- 수정 코드 PR #11 GitHub Actions Python 3.10/3.12 실행에서 각각 29/29 PASS를 확인했고 SHA와 로그를 아래에 추가했다. 별도 main 병합 커밋의 GitHub Actions 재실행 기록은 확인되지 않았다.
 - 실제 디스크 고갈·전원 차단·동시 쓰기·10만 건 성능은 이번 검증 범위 밖이다.
 
 ## 4차 — PR #9 main 병합 이후 재시험
@@ -48,3 +48,11 @@
 - Python3.10 Job `123757580996`: Ran 21 tests, OK, success.
 - Python3.12 Job `123757580482`: Ran 21 tests, OK, success.
 - **당시 결론:** 위 main SHA는 GitHub Ubuntu CI에서 각각 21/21 PASS. 현재 수정 작업 트리의 WSL2 29/29·CLI 61/61 PASS와 구분하며, 수정 코드 CI·사용자 직접 시연·공식 동료평가는 NOT_VERIFIED다.
+
+## 5차 — PR #11 신규 수정 코드 CI 및 main 병합 뒤 WSL2 실증
+
+- 검증 대상 PR 커밋 `0208d59823c01eb1f8c9d478c545cd28962da20a`.
+- 실제 GitHub Actions [run 41037428815](https://github.com/MetaStudy999/codyssey-basic-budget-tracker/actions/runs/41037428815): Python 3.10 `unit-and-cli` Job `124001632858` `Ran 29 tests in 1.363s`, success. Python 3.12 Job `124001632470` `Ran 29 tests in 1.067s`, success. 두 Job의 CLI 기본 시연 단계도 success.
+- [PR #11](https://github.com/MetaStudy999/codyssey-basic-budget-tracker/pull/11)을 `main`에 병합한 SHA `1759968dbfe436583967b7c1878fbbc4ffa31014`.
+- 사용자 WSL2 `main`과 `origin/main` 동일 SHA 확인 후 재시험: Python3.12.3 `Ran 29 tests in 0.949s`, `OK`, exit=0. CLI 검사 `PASS: 61 fresh CLI processes; all assertions passed`, exit=0. `CLEANUP ... True`, Git 작업 트리 clean.
+- 제한: 위 GitHub CI는 PR 헤드에서 수행한 시험이며, main 병합 커밋의 별도 CI 실행은 확인되지 않았다. 사용자 본인 직접 키보드 시연·구술·공식 동료평가·CLEAR는 미검증이다.
