@@ -1,6 +1,6 @@
 # B2-1 — 03단계: 상세 설계 8개 문서 안내
 
-> 03-1~03-8은 **입문자에게 설명 가능한 설계 자료**이며 실제 신규 프로그램은 NOT_STARTED. 개발 승인 PENDING, RUNTIME/LEARNER/CLEAR=NOT_VERIFIED.
+> 03-1~03-8은 **입문자에게 설명 가능한 설계 자료**이며 현재 신규 프로그램은 구현·로컬 검증 승인 후 WSL2_RUNTIME_PASS. [요구별 실제 검증](../05-tests/WSL2-INDEPENDENT-VERIFICATION.md) 참조. LEARNER/동료평가/CLEAR=NOT_VERIFIED.
 > 공통 필수 표준: https://github.com/MetaStudy999/codyssey-basic/blob/main/standards/ROUND-04-AGENT-MISSION-PROCESS-STANDARD.md
 
 ## 30초 요약
@@ -10,7 +10,7 @@ Python 가계부가 **명령 입력 → 유효성 검사 → 비즈니스 규칙
 1. [01 공식 요구 표](../01-requirements/REQUIREMENT-TRACEABILITY.md)에서 필수 REQ-01~23을 확인한다.
 2. [02 과거 자료 분석](../02-analysis/LEGACY-GAP-ANALYSIS.md)에서 기존 참조와 미실행 검증 범위를 구별한다.
 3. 아래 **03-1**부터 순서대로 문서를 열어 Mermaid 도식과 예상 결과를 읽고, "왜 이 방법인가?"를 한 문장으로 설명한다.
-4. [03-8 종합 점검](03-8-INTEGRATED-REVIEW.md)에서 설계·링크·승인 경계를 확인한다. 04 신규 소스는 별도 개발 승인 후 시작한다.
+4. [03-8 종합 점검](03-8-INTEGRATED-REVIEW.md)에서 설계·링크·승인 경계를 확인한다. 04 신규 소스와 실제 WSL2 결과를 대조한다.
 
 ## 03-1~03-8 독립 문서·인계
 | 세부 단계 | 직접 열기 | 평가 연결 | 문서 작성 상태 |
@@ -45,4 +45,4 @@ flowchart LR
 - JSONL: 한 줄에 JSON 객체 하나를 저장한다. 이름이 비슷한 JSON 배열 파일과 구분한다.
 
 ## 상태와 한계
-문서 설계만으로 기능이 동작하거나 학습자가 L4/L5 수준이라고 선언하지 않는다. 05 실제 시험·06 증빙·07 평가는 04 승인된 신규 구현이 준비된 뒤 진행한다. 이전 archive의 코드·Evidence·PASS를 신규 기준으로 사용하지 않는다.
+문서 설계만으로 기능이 동작하거나 학습자가 L4/L5 수준이라고 선언하지 않는다. 승인된 04 구현의 05 실제 시험·06 증빙은 완료했고, 07 사용자 직접 평가·동료평가는 별도로 남아 있다. 이전 archive의 코드·Evidence·PASS를 신규 기준으로 사용하지 않는다.

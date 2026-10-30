@@ -1,9 +1,8 @@
 # B2-1 — 05단계 테스트·회귀 검증
 
-- [실제 GitHub Actions 3회·Python 3.10/3.12 반복 시험](RUNTIME-TEST-RESULTS.md)
-- [기존 문서 00~03 정적 QA](DOCUMENT-QA-ROUND04.md)
-- [보완한 설계의 3회 내용 QA](DESIGN-CONTENT-REVIEW.md)
-- 새 소스: [04-src](../04-src/README.md)
-- 실제 로그·Evidence: [06-evidence](../06-evidence/GITHUB-ACTIONS-EVIDENCE.md)
+- [현재 WSL2 독립 검증·REQ-01~23 감사](WSL2-INDEPENDENT-VERIFICATION.md): Python 3.12.3, unittest 29/29, 별도 CLI 61회 PASS.
+- [실제 출력·환경·검증 경계](../06-evidence/WSL2-RUNTIME-2026-10-30.md)
+- [과거 GitHub Actions 결과](RUNTIME-TEST-RESULTS.md): 당시 소스의 21/21 기록.
+- [기존 문서 QA](DOCUMENT-QA-ROUND04.md) · [설계 QA](DESIGN-CONTENT-REVIEW.md)
 
-**CI test PASS**와 **WSL2 독립 실증 NOT_VERIFIED**, 학습자 독립 숙달 NOT_VERIFIED, 최종 CLEAR NOT_VERIFIED를 분리합니다.
+사용자 직접 시연·독립 설명·학습 숙달·동료평가·CLEAR는 NOT_VERIFIED입니다.

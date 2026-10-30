@@ -2,7 +2,7 @@
 
 **30초 요약:** 이 미션은 **Python으로 수입·지출 관리**에 대해 배웁니다. 첫 번째 용어는 <mark>리스트(List)</mark>입니다. **개념 하나 → 그림 하나 → 질문 하나**를 이해한 후 다음으로 넘어가면 됩니다.
 
-> **00단계: 계획 문서 작성** · **01 공식 요구: 문서 정적 QA 완료** · **새 코드: NOT_STARTED / 승인 PENDING** · **실행·학습 성취: NOT_VERIFIED**
+> **00단계: 계획 문서 작성** · **01 공식 요구: 문서 정적 QA 완료** · **새 코드: 구현 완료 / 로컬 작업 승인** · **실행: WSL2_RUNTIME_PASS / 학습 성취: NOT_VERIFIED**
 
 **읽는 순서:** 10초에 목표 파악 → 1분에 첫 개념 그림 보기 → 5분에 자기 설명·종이 재현.
 
@@ -64,7 +64,7 @@ flowchart LR
 
 다음 개념은 [B2-1 기술 학습 9요소](TECHNICAL-LEARNING-OUTLINE.md)에서 하나씩 확인하세요. 전체 학습 흐름은 **용어 → 개념 → 비유 → 아키텍처 → 주요 코드 → 실행 흐름 → 오류 해결 → 실습 → 평가**입니다.
 
-<ins>위 그림은 실제 신규 코드나 시험 결과가 아닙니다. 신규 설계는 03단계, 구현은 별도 승인 후 04단계입니다.</ins>
+<ins>위 그림은 실제 신규 코드나 시험 결과가 아닙니다. 신규 설계는 03단계, 현재 구현은 승인된 04단계에 있으며 실제 결과는 06 증빙을 참조합니다.</ins>
 
 <a name="b21-00-status"></a>
 
@@ -75,8 +75,9 @@ flowchart LR
 | **00단계 교육·계획 개요** | PLAN_ONLY — 문서 작성 |
 | **01단계 공식 요구 분석** | DOC_STATIC_PASS (문서 기준) |
 | **03단계 상세 설계** | DOC_STATIC_PASS (설계 문서) |
-| **04단계 신규 코드** | NOT_STARTED / 승인 PENDING |
-| **실제 실행·슬라이드·학습자 숙달** | NOT_VERIFIED 또는 NOT_STARTED |
+| **04단계 신규 코드** | 구현 완료 / 사용자 로컬 검증·커밋 승인 |
+| **실제 실행** | WSL2 29/29 unittest·61회 CLI PASS ([증빙](../06-evidence/WSL2-RUNTIME-2026-10-30.md)) |
+| **학습자 숙달·직접 시연·동료평가·CLEAR** | NOT_VERIFIED |
 
 **중요:** 계획/자료 반영 PASS와 **미션 기능 PASS·학습자 MASTER**는 다릅니다. 이전 Round의 결과는 보존합니다.
 
@@ -96,11 +97,11 @@ flowchart LR
 | 후속 개발단계 | [01 요구](../01-requirements/README.md) · [02 분석](../02-analysis/README.md) · [03 설계](../03-design/README.md) |
 | 전체 공통 교육 규칙 | [중앙 학습 표준](https://github.com/MetaStudy999/codyssey-basic/blob/main/standards/LEARNER-CENTERED-AI-LEARNING-STANDARD.md) |
 
-**다음 단계:** [01 요구·평가](../01-requirements/README.md) → [02 기존 분석](../02-analysis/README.md) → [03 설계](../03-design/README.md) 순서로 읽습니다. 2026-10-30 기술 설계 보완은 [내용 QA](../05-tests/DESIGN-CONTENT-REVIEW.md)를 참조하세요. 실제 신규 코드·런타임은 미착수입니다. 새로운 코드 개발·실행은 아직 승인되지 않았습니다.
+**다음 단계:** [01 요구·평가](../01-requirements/README.md) → [02 기존 분석](../02-analysis/README.md) → [03 설계](../03-design/README.md) 순서로 읽습니다. 2026-10-30 기술 설계 보완은 [내용 QA](../05-tests/DESIGN-CONTENT-REVIEW.md)를 참조하세요. 현재 신규 코드·WSL2 런타임은 검증 완료이며 사용자 직접 평가를 남겨 두었습니다.
 
 ---
 
-## 기존 00단계 계획·승인 기록 (원문 보존)
+## 과거 00단계 계획·승인 기록 (당시 원문, 현재 상태 아님)
 
 **기존 제목:** B2-1 — 계획 및 승인
 

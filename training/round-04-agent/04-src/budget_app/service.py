@@ -162,7 +162,7 @@ class BudgetService:
                             date=row["date"], type=row["type"], category=row["category"],
                             amount=row["amount"], memo=row["memo"], tags=row["tags"]))
                     except BudgetError as error:
-                        failures.append(f"{line_no}행: {error.reason}")
+                        failures.append(f"{line_no}행: {error.reason} [힌트] {error.hint}")
         except (OSError, UnicodeError, csv.Error) as error:
             raise BudgetError("CSV 파일을 읽을 수 없습니다.", "경로·UTF-8 인코딩·CSV 형식을 확인하세요.") from error
         if new_items:

@@ -5,7 +5,7 @@ import os
 import tempfile
 from pathlib import Path
 from typing import Iterator
-from .models import BudgetError, Transaction
+from .models import BudgetError, Transaction, validate_amount, validate_month
 
 DEFAULT_CATEGORIES = ("food", "transport", "rent", "salary", "etc")
 
@@ -37,7 +37,18 @@ class Store:
                         value = json.loads(line)
                         if not isinstance(value, dict):
                             raise ValueError("not an object")
-                    except (ValueError, TypeError) as error:
+                        if name == "categories":
+                            category = value["name"]
+                            if (not isinstance(category, str) or not category.strip() or
+                                    category != category.strip() or "," in category or "\n" in category):
+                                raise ValueError("invalid category")
+                        elif name == "budgets":
+                            validate_month(value["month"])
+                            amount = value["amount"]
+                            if not isinstance(amount, int) or isinstance(amount, bool):
+                                raise ValueError("invalid budget amount type")
+                            validate_amount(amount)
+                    except (ValueError, TypeError, KeyError, BudgetError) as error:
                         raise BudgetError(f"{name}.jsonl의 {line_no}행을 읽을 수 없습니다.", "백업 파일과 JSONL 형식을 확인하세요.") from error
                     yield value
         except (OSError, UnicodeError) as error:

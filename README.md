@@ -1,4 +1,4 @@
-> **2026-10-25 신규 미션 작성 경로(B2-1):** [`training/round-04-agent/`](training/round-04-agent/README.md) — 신규 코드는 `training/round-04-agent/04-src/`에만 작성합니다. 기존 Round 01~03 및 루트의 내용은 과거 수행·참고 이력으로 보존합니다. **현재 새 Round는 PLAN_ONLY / NOT_STARTED이며 사용자 개발 승인 전 코드 실행·수정·배포 금지**입니다. 중앙 기준: [15개 미션 신규 실행 허브](https://github.com/MetaStudy999/codyssey-basic/tree/main/training/round-04-agent).
+> **2026-10-25 신규 미션 작성 경로(B2-1):** [`training/round-04-agent/`](training/round-04-agent/README.md) — 신규 코드는 `training/round-04-agent/04-src/`에만 작성합니다. 기존 Round 01~03 및 루트의 내용은 과거 수행·참고 이력으로 보존합니다. **현재 Round 04는 사용자 요청으로 구현·로컬 검증이 승인되었고 WSL2 런타임 PASS(29개 unittest·61회 CLI)입니다. 사용자 직접 시연·동료평가·CLEAR는 NOT_VERIFIED**입니다. 중앙 기준: [15개 미션 신규 실행 허브](https://github.com/MetaStudy999/codyssey-basic/tree/main/training/round-04-agent).
 
 > **자료 보관:** 기존 Round 01·02는 [`training/archive/`](training/archive/README.md)로 이동했으며 파일 원본을 보존합니다.
 
@@ -7,11 +7,12 @@
 ## 현재 훈련 상태
 
 - 구분: **필수 미션 (REQUIRED)**
-- Round: **R01 — CLEAR**
-- Runtime Mission 상태: **⬜ NOT STARTED**
-- Phase A Reference 상태: **CORE READY**
+- Round: **Round 04 Agent — 구현·WSL2 검증 완료, 인계 준비**
+- Runtime Mission 상태: **WSL2_RUNTIME_PASS — Python 3.12.3, unittest 29/29, 별도 CLI 61회**
+- 사용자 직접 시연·학습 숙달·동료평가·CLEAR: **NOT_VERIFIED**
+- 과거 R01/R02 및 Phase A Reference: **REFERENCE_ONLY / CORE READY (과거 기록)**
 
-Reference Complete Version과 자체감사를 준비했습니다. 실제 CLI 실행·오류 경로·재실행 persistence·Evidence를 확인하기 전에는 CLEAR로 판정하지 않습니다.
+[실제 WSL2 증빙](training/round-04-agent/06-evidence/WSL2-RUNTIME-2026-10-30.md)과 [독립 검증·요구별 감사](training/round-04-agent/05-tests/WSL2-INDEPENDENT-VERIFICATION.md)를 확인하세요. 실제 가상 데이터로 오류·영속성·CSV·파일 보존을 검증했습니다. 사용자 직접 시연과 동료평가는 미진행이며 CLEAR를 선언하지 않습니다.
 
 ## 공식 원본
 
@@ -44,20 +45,20 @@ Reference Complete Version과 자체감사를 준비했습니다. 실제 CLI 실
 Repository 루트에서:
 
 ```bash
-export PYTHONPATH="$PWD/training/archive/round-01-clear/reference"
-python3 -m budget_app --help
+cd training/round-04-agent/04-src
+PYTHONDONTWRITEBYTECODE=1 python3 -m budget_app --help
 ```
 
 별도 실습 데이터 폴더 권장:
 
 ```bash
-export B2_DATA=/tmp/codyssey-b2-1-data
-python3 -m budget_app --data-dir "$B2_DATA" category list
+B2_DATA=$(mktemp -d)
+PYTHONDONTWRITEBYTECODE=1 python3 -m budget_app --data-dir "$B2_DATA" category list
 ```
 
 ## 저장 파일 위치와 형식
 
-기본 위치는 `./data`이며 `--data-dir`로 변경할 수 있습니다. Reference 내부 저장 포맷은 JSONL입니다.
+기본 위치는 `./data`이며 `--data-dir`로 변경할 수 있습니다. Round 04 내부 저장 포맷은 JSONL입니다. 임시 실증의 데이터는 매 실행 새 폴더에 만들고 정리합니다.
 
 ```text
 data/
@@ -110,7 +111,7 @@ UTF-8, 헤더 포함:
 
 Import는 정상 행은 저장하고 깨진 행은 건너뛴 뒤 `imported`, `skipped`, 행별 원인을 출력하는 부분 성공 정책을 사용합니다.
 
-## Reference 자체감사에서 보강한 항목
+## 과거 Reference 자체감사 기록 (신규 증빙과 구분)
 
 - transactions/categories/budgets **3종 재오픈 persistence 테스트**
 - list/search 실제 generator 객체 확인
@@ -124,32 +125,27 @@ Import는 정상 행은 저장하고 깨진 행은 건너뛴 뒤 `imported`, `sk
 ## 테스트/검증
 
 ```bash
-bash training/archive/round-01-clear/environment/verify.sh
+PYTHONDONTWRITEBYTECODE=1 python3 training/round-04-agent/05-tests/runtime_cli_verification.py
 ```
 
 또는 unit test만:
 
 ```bash
-export PYTHONPATH="$PWD/training/archive/round-01-clear/reference"
-PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover \
-  -s training/archive/round-01-clear/reference/tests \
-  -p 'test_*.py' -v
+cd training/round-04-agent/04-src
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
 ## 핵심 설계
 
 - `models.py`: 데이터 구조
-- `repositories.py`: JSONL 파일 I/O
-- `services.py`: 비즈니스 규칙
-- `cli.py`: 사용자 명령/입출력
-- `utils.py`: generator, decorator, validation, atomic rewrite
+- `storage.py`: JSONL 파일 I/O·generator·원자적 교체
+- `service.py`: 거래·분류·예산·CSV 비즈니스 규칙
+- `cli.py`: 사용자 명령/입출력·공통 오류 데코레이터
 
 list/search는 generator streaming으로 처리하며, update/delete는 임시 파일을 완전히 쓴 뒤 `os.replace()`로 원자적 교체합니다.
 
 ## CLEAR 원칙
 
-**Phase A: CORE READY**
+**Round 04 Runtime: WSL2_RUNTIME_PASS / CLEAR: NOT_VERIFIED**
 
-**Runtime: ⬜ NOT STARTED / CLEAR 아님**
-
-Phase C에서 정상 기능, 대표 오류, 재실행 persistence, import/export, test 결과와 Evidence를 실제로 확인한 뒤에만 `✅ CLEAR`로 변경합니다.
+이번 agent 실행 결과와 사용자 직접 시연·설명·동료평가를 구분합니다. 과거 Reference의 CLEAR를 현재 Round에 전용하지 않습니다. 이번 PR 준비는 지정 feature 브랜치 커밋과 일반 push까지 승인되었으며 클라우드 배포는 범위 밖입니다.
